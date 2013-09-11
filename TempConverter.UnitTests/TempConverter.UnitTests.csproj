@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0DAB6EF5-7191-403C-8CD7-3F761FB01994}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TempConverter.UnitTests</RootNamespace>
+    <AssemblyName>TempConverter.UnitTests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.2\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Celsius\ToDecimalPlace_0\TemperatureConverter_C_To_F_Should.cs" />
+    <Compile Include="Celsius\ToDecimalPlace_0\TemperatureConverter_C_To_K_Should.cs" />
+    <Compile Include="Celsius\ToDecimalPlace_2\TemperatureConverter_C_To_F_Should.cs" />
+    <Compile Include="Celsius\ToDecimalPlace_2\TemperatureConverter_C_To_K_Should.cs" />
+    <Compile Include="Fahrenheit\ToDecimalPlace_0\TemperatureConverter_F_To_C_Should.cs" />
+    <Compile Include="Fahrenheit\ToDecimalPlace_0\TemperatureConverter_F_To_K_Should.cs" />
+    <Compile Include="Fahrenheit\ToDecimalPlace_2\TemperatureConverter_F_To_C_Should.cs" />
+    <Compile Include="Fahrenheit\ToDecimalPlace_2\TemperatureConverter_F_To_K_Should.cs" />
+    <Compile Include="Kelvin\ToDecimalPlace_0\TemperatureConverter_K_To_C_Should.cs" />
+    <Compile Include="Kelvin\ToDecimalPlace_0\TemperatureConverter_K_To_F_Should.cs" />
+    <Compile Include="Kelvin\ToDecimalPlace_2\TemperatureConverter_K_To_C_Should.cs" />
+    <Compile Include="Kelvin\ToDecimalPlace_2\TemperatureConverter_K_To_F_Should.cs" />
+    <Compile Include="Mother.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="notes.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TempConverter.Model\TempConverter.Model.csproj">
+      <Project>{8235e4b6-d2d4-4ae8-ae41-4e5f36c51e5e}</Project>
+      <Name>TempConverter.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
