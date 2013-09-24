@@ -14,8 +14,7 @@ namespace TempConverter.GUI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             ITemperatureConverter tempConverter = new TemperatureConverter();            
-            
-            //Scale set for weather not scientific
+
             var scale = new Scale<int> {Minimum = -150, Maximum = 150, ScaleBy = 3};
                       
             Application.Run(new Form1(tempConverter, scale));

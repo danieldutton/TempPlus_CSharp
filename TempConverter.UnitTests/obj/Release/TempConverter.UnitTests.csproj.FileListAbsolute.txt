@@ -16,3 +16,12 @@ E:\temp\TempConverter.UnitTests\bin\Release\nunit.framework.xml
 E:\temp\TempConverter.UnitTests\obj\Release\TempConverter.UnitTests.csprojResolveAssemblyReference.cache
 E:\temp\TempConverter.UnitTests\obj\Release\TempConverter.UnitTests.dll
 E:\temp\TempConverter.UnitTests\obj\Release\TempConverter.UnitTests.pdb
+C:\Users\Dan\Documents\GitHub\Temperature-Converter\TempConverter.UnitTests\bin\Release\TempConverter.UnitTests.dll
+C:\Users\Dan\Documents\GitHub\Temperature-Converter\TempConverter.UnitTests\bin\Release\TempConverter.UnitTests.pdb
+C:\Users\Dan\Documents\GitHub\Temperature-Converter\TempConverter.UnitTests\bin\Release\nunit.framework.dll
+C:\Users\Dan\Documents\GitHub\Temperature-Converter\TempConverter.UnitTests\bin\Release\TempConverter.Model.dll
+C:\Users\Dan\Documents\GitHub\Temperature-Converter\TempConverter.UnitTests\bin\Release\TempConverter.Model.pdb
+C:\Users\Dan\Documents\GitHub\Temperature-Converter\TempConverter.UnitTests\bin\Release\nunit.framework.xml
+C:\Users\Dan\Documents\GitHub\Temperature-Converter\TempConverter.UnitTests\obj\Release\TempConverter.UnitTests.csprojResolveAssemblyReference.cache
+C:\Users\Dan\Documents\GitHub\Temperature-Converter\TempConverter.UnitTests\obj\Release\TempConverter.UnitTests.dll
+C:\Users\Dan\Documents\GitHub\Temperature-Converter\TempConverter.UnitTests\obj\Release\TempConverter.UnitTests.pdb

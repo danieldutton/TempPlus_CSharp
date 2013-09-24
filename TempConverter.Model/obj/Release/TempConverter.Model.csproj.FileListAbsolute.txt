@@ -28,3 +28,8 @@ E:\temp\TempConverter.Model\bin\Release\TempConverter.Model.pdb
 E:\temp\TempConverter.Model\obj\Release\TempConverter.Model.csprojResolveAssemblyReference.cache
 E:\temp\TempConverter.Model\obj\Release\TempConverter.Model.dll
 E:\temp\TempConverter.Model\obj\Release\TempConverter.Model.pdb
+C:\Users\Dan\Documents\GitHub\Temperature-Converter\TempConverter.Model\bin\Release\TempConverter.Model.dll
+C:\Users\Dan\Documents\GitHub\Temperature-Converter\TempConverter.Model\bin\Release\TempConverter.Model.pdb
+C:\Users\Dan\Documents\GitHub\Temperature-Converter\TempConverter.Model\obj\Release\TempConverter.Model.csprojResolveAssemblyReference.cache
+C:\Users\Dan\Documents\GitHub\Temperature-Converter\TempConverter.Model\obj\Release\TempConverter.Model.dll
+C:\Users\Dan\Documents\GitHub\Temperature-Converter\TempConverter.Model\obj\Release\TempConverter.Model.pdb

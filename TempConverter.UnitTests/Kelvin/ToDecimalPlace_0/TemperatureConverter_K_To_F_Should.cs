@@ -26,7 +26,6 @@ namespace TempConverter.UnitTests.Kelvin.ToDecimalPlace_0
         public void ConvertKelvinToFahrenheitRange_170_To_180_RoundedTo0DP([Range(170d, 180d, 1d)]double temperature,
                     [Values(-154, -152, -150, -148, -146, -145, -143, -141, -139, -137, -136)]double expected)
         {
-
             double actual = _temperatureConverter.ConvertTemperature(temperature, _kelvinToFahrenheit, RoundBy);
 
             Assert.AreEqual(expected, actual);
