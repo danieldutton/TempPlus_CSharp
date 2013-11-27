@@ -73,3 +73,14 @@ C:\Users\Dan\Documents\GitHub\Temperature-Converter\TempConverter.GUI\obj\Releas
 C:\Users\Dan\Documents\GitHub\Temperature-Converter\TempConverter.GUI\obj\Release\TempConverter.GUI.Form1.resources
 C:\Users\Dan\Documents\GitHub\Temperature-Converter\TempConverter.GUI\obj\Release\TempConverter.GUI.Properties.Resources.resources
 C:\Users\Dan\Documents\GitHub\Temperature-Converter\TempConverter.GUI\obj\Release\TempConverter.GUI.csproj.GenerateResource.Cache
+C:\Users\Danny\Documents\GitHub\Temperature-Converter\TempConverter.GUI\bin\Release\TempConverter.GUI.exe.config
+C:\Users\Danny\Documents\GitHub\Temperature-Converter\TempConverter.GUI\bin\Release\TempConverter.GUI.exe
+C:\Users\Danny\Documents\GitHub\Temperature-Converter\TempConverter.GUI\bin\Release\TempConverter.GUI.pdb
+C:\Users\Danny\Documents\GitHub\Temperature-Converter\TempConverter.GUI\bin\Release\TempConverter.Model.dll
+C:\Users\Danny\Documents\GitHub\Temperature-Converter\TempConverter.GUI\bin\Release\TempConverter.Model.pdb
+C:\Users\Danny\Documents\GitHub\Temperature-Converter\TempConverter.GUI\obj\Release\TempConverter.GUI.csprojResolveAssemblyReference.cache
+C:\Users\Danny\Documents\GitHub\Temperature-Converter\TempConverter.GUI\obj\Release\TempConverter.GUI.Form1.resources
+C:\Users\Danny\Documents\GitHub\Temperature-Converter\TempConverter.GUI\obj\Release\TempConverter.GUI.Properties.Resources.resources
+C:\Users\Danny\Documents\GitHub\Temperature-Converter\TempConverter.GUI\obj\Release\TempConverter.GUI.csproj.GenerateResource.Cache
+C:\Users\Danny\Documents\GitHub\Temperature-Converter\TempConverter.GUI\obj\Release\TempConverter.GUI.exe
+C:\Users\Danny\Documents\GitHub\Temperature-Converter\TempConverter.GUI\obj\Release\TempConverter.GUI.pdb
