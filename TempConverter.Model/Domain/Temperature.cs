@@ -20,7 +20,7 @@
         public override string ToString()
         {
             return "[" + GetType().Name + "]" +
-                   string.Format("Fahrenheit:{0} Celsius:{1} Kelvin:{2}", Fahrenheit, Celsius, Kelvin);
+                   string.Format(" Fahrenheit: {0} Celsius: {1} Kelvin: {2}", Fahrenheit, Celsius, Kelvin);
         }
     }
 }

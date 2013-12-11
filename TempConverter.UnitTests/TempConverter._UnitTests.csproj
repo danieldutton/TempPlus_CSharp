@@ -7,8 +7,8 @@
     <ProjectGuid>{0DAB6EF5-7191-403C-8CD7-3F761FB01994}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TempConverter.UnitTests</RootNamespace>
-    <AssemblyName>TempConverter.UnitTests</AssemblyName>
+    <RootNamespace>TempConverter._UnitTests</RootNamespace>
+    <AssemblyName>TempConverter._UnitTests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -49,6 +49,8 @@
     <Compile Include="Kelvin\ToDecimalPlace_0\TemperatureConverter_K_To_F_Should.cs" />
     <Compile Include="Kelvin\ToDecimalPlace_2\TemperatureConverter_K_To_C_Should.cs" />
     <Compile Include="Kelvin\ToDecimalPlace_2\TemperatureConverter_K_To_F_Should.cs" />
+    <Compile Include="Model\Scale_Should.cs" />
+    <Compile Include="Model\Temperature_Should.cs" />
     <Compile Include="Mother.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -64,6 +66,7 @@
       <Name>TempConverter.Model</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

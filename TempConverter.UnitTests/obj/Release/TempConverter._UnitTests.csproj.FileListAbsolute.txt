@@ -1,0 +1,9 @@
+C:\Users\Danny\Documents\GitHub\Temperature-Converter\TempConverter.UnitTests\bin\Release\TempConverter._UnitTests.dll
+C:\Users\Danny\Documents\GitHub\Temperature-Converter\TempConverter.UnitTests\bin\Release\TempConverter._UnitTests.pdb
+C:\Users\Danny\Documents\GitHub\Temperature-Converter\TempConverter.UnitTests\bin\Release\nunit.framework.dll
+C:\Users\Danny\Documents\GitHub\Temperature-Converter\TempConverter.UnitTests\bin\Release\TempConverter.Model.dll
+C:\Users\Danny\Documents\GitHub\Temperature-Converter\TempConverter.UnitTests\bin\Release\TempConverter.Model.pdb
+C:\Users\Danny\Documents\GitHub\Temperature-Converter\TempConverter.UnitTests\bin\Release\nunit.framework.xml
+C:\Users\Danny\Documents\GitHub\Temperature-Converter\TempConverter.UnitTests\obj\Release\TempConverter._UnitTests.csprojResolveAssemblyReference.cache
+C:\Users\Danny\Documents\GitHub\Temperature-Converter\TempConverter.UnitTests\obj\Release\TempConverter._UnitTests.dll
+C:\Users\Danny\Documents\GitHub\Temperature-Converter\TempConverter.UnitTests\obj\Release\TempConverter._UnitTests.pdb

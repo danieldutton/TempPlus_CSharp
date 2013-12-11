@@ -19,7 +19,7 @@
 
         public override string ToString()
         {
-            return "[" + GetType().Name + "] " + string.Format("Minimum: {0} " + "Maximum:{1} " + "ScaleBy: {2}"
+            return "[" + GetType().Name + "] " + string.Format("Minimum: {0} " + "Maximum: {1} " + "ScaleBy: {2}"
                 ,Minimum, Maximum, ScaleBy);
         }
     }

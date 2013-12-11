@@ -10,7 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{31E4D0
 		.nuget\packages.config = .nuget\packages.config
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TempConverter.UnitTests", "TempConverter.UnitTests\TempConverter.UnitTests.csproj", "{0DAB6EF5-7191-403C-8CD7-3F761FB01994}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TempConverter._UnitTests", "TempConverter.UnitTests\TempConverter._UnitTests.csproj", "{0DAB6EF5-7191-403C-8CD7-3F761FB01994}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
