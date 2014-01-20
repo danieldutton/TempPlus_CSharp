@@ -9,6 +9,8 @@ namespace TempConverter.GUI
     public partial class Form1 : Form
     {
         private readonly ITemperatureConverter _tempConverter;
+
+        private readonly PanelPainter _panelPainter;
         
         private Scale<int> _scale;
 
@@ -17,6 +19,7 @@ namespace TempConverter.GUI
         public Form1(ITemperatureConverter tempConverter, Scale<int> scale)
         {
             _tempConverter = tempConverter;
+            _panelPainter = new PanelPainter(GraphBarHeight);
             _scale = scale;
             
             InitializeComponent();  
@@ -89,20 +92,17 @@ namespace TempConverter.GUI
 
         private void PaintFahrenheitPanel(object sender, PaintEventArgs e)
         {
-            var panelPainter = new PanelPainter(GraphBarHeight);
-            panelPainter.PaintFahrenheitPanel(e, _scale);
+            _panelPainter.PaintFahrenheitPanel(e, _scale);
         }
 
         private void PaintCelsiusPanel(object sender, PaintEventArgs e)
         {
-            var panelPainter = new PanelPainter(GraphBarHeight);
-            panelPainter.PaintCelsiusPanel(e, _scale);
+            _panelPainter.PaintCelsiusPanel(e, _scale);
         }
 
         private void PaintKelvinPanel(object sender, PaintEventArgs e)
         {
-            var panelPainter = new PanelPainter(GraphBarHeight);
-            panelPainter.PaintKelvinPanel(e, _scale);                
+            _panelPainter.PaintKelvinPanel(e, _scale);                
         }
 
         private void CheckBoxRoundCheckedChanged(object sender, System.EventArgs e)

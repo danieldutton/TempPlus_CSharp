@@ -5,11 +5,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TempConverter.Model", "Temp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TempConverter.GUI", "TempConverter.GUI\TempConverter.GUI.csproj", "{EB69CD55-DA76-4B3B-BD4B-ADD549627E5D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{31E4D0C2-C2E8-4ACE-825C-2C495AF14F87}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\packages.config = .nuget\packages.config
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TempConverter._UnitTests", "TempConverter.UnitTests\TempConverter._UnitTests.csproj", "{0DAB6EF5-7191-403C-8CD7-3F761FB01994}"
 EndProject
 Global
