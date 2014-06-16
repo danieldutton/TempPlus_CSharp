@@ -69,7 +69,8 @@ namespace TempConverter.GUI
             {
                 RefreshPanelPaint(panelPaintArgs);
                 panelPaintArgs.Graphics.FillRectangle(new SolidBrush(Color.Yellow), x: 0, y: 0,
-                                                 width:scale.ScaleBy, height: GraphBarHeight);
+                                                 width:(int) panelPaintArgs.Temperatures.Kelvin /
+                                                 scale.ScaleBy, height: GraphBarHeight);
             }
 
             if (panelPaintArgs.Temperatures.Kelvin < 0)
