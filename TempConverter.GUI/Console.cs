@@ -10,18 +10,23 @@ namespace TempConverter.GUI
     {
         private readonly ITemperatureConverter _tempConverter;
 
-        private readonly PanelPainter _panelPainter;
+        private readonly PanelPainter _fahrenheitPainter;
+
+        private readonly PanelPainter _celsiusPainter;
+
+        private readonly PanelPainter _kelvinPainter;
         
         private Scale<int> _scale;
-
-        private const int GraphBarHeight = 8;
 
 
         public Console(ITemperatureConverter tempConverter, Scale<int> scale)
         {
             _tempConverter = tempConverter;
-            _panelPainter = new PanelPainter(GraphBarHeight);
             _scale = scale;
+
+            _fahrenheitPainter = new PanelPainter();
+            _celsiusPainter = new PanelPainter();
+            _kelvinPainter = new PanelPainter();
             
             InitializeComponent();  
             InitialiseLabels();
@@ -93,17 +98,26 @@ namespace TempConverter.GUI
 
         private void PaintFahrenheitPanel(object sender, PaintEventArgs e)
         {
-            _panelPainter.PaintFahrenheitPanel(e, _scale);
+            var panelPaint = e as PanelPaintEventArgs;
+            if (panelPaint == null) return;
+
+            _fahrenheitPainter.PaintFahrenheitPanel(e, panelPaint.Temperatures.Fahrenheit);
         }
 
         private void PaintCelsiusPanel(object sender, PaintEventArgs e)
         {
-            _panelPainter.PaintCelsiusPanel(e, _scale);
+            var panelPaint = e as PanelPaintEventArgs;
+            if (panelPaint == null) return;
+
+            _celsiusPainter.PaintFahrenheitPanel(e, panelPaint.Temperatures.Celsius);
         }
 
         private void PaintKelvinPanel(object sender, PaintEventArgs e)
         {
-            _panelPainter.PaintKelvinPanel(e, _scale);                
+            var panelPaint = e as PanelPaintEventArgs;
+            if (panelPaint == null) return;
+
+            _kelvinPainter.PaintFahrenheitPanel(e, panelPaint.Temperatures.Kelvin);
         }
 
         private void CheckBoxRoundCheckedChanged(object sender, System.EventArgs e)
