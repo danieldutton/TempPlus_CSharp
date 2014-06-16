@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using TempConverter.Model.Domain;
 
-namespace TempConverter._UnitTests.Model
+namespace TempConverter.UnitTests.Model
 {
     [TestFixture]
     public class Temperature_Should

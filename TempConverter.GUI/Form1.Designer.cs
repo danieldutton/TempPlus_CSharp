@@ -1,9 +1,10 @@
 ﻿
+using TempConverter.GUI.Components;
 using TempConverter.Model.Domain;
 
 namespace TempConverter.GUI
 {
-    partial class Form1
+    partial class Console
     {
         /// <summary>
         /// Required designer variable.
@@ -31,23 +32,22 @@ namespace TempConverter.GUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Console));
             this._lblFahrenheitValue = new System.Windows.Forms.Label();
             this._lblKelvinValue = new System.Windows.Forms.Label();
-            this._lblCelciusValue = new System.Windows.Forms.Label();
-            this._lblRoundValues = new System.Windows.Forms.Label();
+            this._lblCelsiusValue = new System.Windows.Forms.Label();
+            this._lblRound = new System.Windows.Forms.Label();
             this._checkBoxRound = new System.Windows.Forms.CheckBox();
-            this._lblSlideBarMinTempValue = new System.Windows.Forms.Label();
-            this._lblSlideBarMaxTempValue = new System.Windows.Forms.Label();
-            this._lblSlideBarZeroTempValue = new System.Windows.Forms.Label();
+            this._lblMinTemp = new System.Windows.Forms.Label();
+            this._lblMaxTemp = new System.Windows.Forms.Label();
+            this._lblZero = new System.Windows.Forms.Label();
             this._panelFahrenheit = new System.Windows.Forms.Panel();
             this._panelCelcius = new System.Windows.Forms.Panel();
             this._panelKelvin = new System.Windows.Forms.Panel();
             this._lblKelvin = new System.Windows.Forms.Label();
-            this._lblCelcius = new System.Windows.Forms.Label();
-            this._lblFarenheit = new System.Windows.Forms.Label();
-            this._sliderBar = new TempConverter.GUI.Components.NoFocusTrackBar(new Scale<int> {Minimum = -150, Maximum = 150, ScaleBy = 3});
-            ((System.ComponentModel.ISupportInitialize)(this._sliderBar)).BeginInit();
+            this._lblCelsius = new System.Windows.Forms.Label();
+            this._lblFahrenheit = new System.Windows.Forms.Label();
+            this._sliderBar = new NoFocusTrackBar(new Scale<int>(-150, 150, 3));
             this.SuspendLayout();
             // 
             // _lblFahrenheitValue
@@ -74,28 +74,28 @@ namespace TempConverter.GUI
             this._lblKelvinValue.TabIndex = 1;
             this._lblKelvinValue.Text = "0";
             // 
-            // _lblCelciusValue
+            // _lblCelsiusValue
             // 
-            this._lblCelciusValue.AutoSize = true;
-            this._lblCelciusValue.BackColor = System.Drawing.Color.Transparent;
-            this._lblCelciusValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._lblCelciusValue.ForeColor = System.Drawing.Color.White;
-            this._lblCelciusValue.Location = new System.Drawing.Point(149, 86);
-            this._lblCelciusValue.Name = "_lblCelciusValue";
-            this._lblCelciusValue.Size = new System.Drawing.Size(13, 13);
-            this._lblCelciusValue.TabIndex = 1;
-            this._lblCelciusValue.Text = "0";
+            this._lblCelsiusValue.AutoSize = true;
+            this._lblCelsiusValue.BackColor = System.Drawing.Color.Transparent;
+            this._lblCelsiusValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._lblCelsiusValue.ForeColor = System.Drawing.Color.White;
+            this._lblCelsiusValue.Location = new System.Drawing.Point(149, 86);
+            this._lblCelsiusValue.Name = "_lblCelsiusValue";
+            this._lblCelsiusValue.Size = new System.Drawing.Size(13, 13);
+            this._lblCelsiusValue.TabIndex = 1;
+            this._lblCelsiusValue.Text = "0";
             // 
-            // _lblRoundValues
+            // _lblRound
             // 
-            this._lblRoundValues.AutoSize = true;
-            this._lblRoundValues.Font = new System.Drawing.Font("Rod", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._lblRoundValues.ForeColor = System.Drawing.Color.White;
-            this._lblRoundValues.Location = new System.Drawing.Point(8, 132);
-            this._lblRoundValues.Name = "_lblRoundValues";
-            this._lblRoundValues.Size = new System.Drawing.Size(38, 14);
-            this._lblRoundValues.TabIndex = 4;
-            this._lblRoundValues.Text = "Round";
+            this._lblRound.AutoSize = true;
+            this._lblRound.Font = new System.Drawing.Font("Rod", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._lblRound.ForeColor = System.Drawing.Color.White;
+            this._lblRound.Location = new System.Drawing.Point(8, 132);
+            this._lblRound.Name = "_lblRound";
+            this._lblRound.Size = new System.Drawing.Size(38, 14);
+            this._lblRound.TabIndex = 4;
+            this._lblRound.Text = "Round";
             // 
             // _checkBoxRound
             // 
@@ -108,38 +108,38 @@ namespace TempConverter.GUI
             this._checkBoxRound.UseVisualStyleBackColor = true;
             this._checkBoxRound.CheckedChanged += new System.EventHandler(this.CheckBoxRoundCheckedChanged);
             // 
-            // _lblSlideBarMinTempValue
+            // _lblMinTemp
             // 
-            this._lblSlideBarMinTempValue.AutoSize = true;
-            this._lblSlideBarMinTempValue.Font = new System.Drawing.Font("Trebuchet MS", 6.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._lblSlideBarMinTempValue.ForeColor = System.Drawing.Color.Red;
-            this._lblSlideBarMinTempValue.Location = new System.Drawing.Point(9, 44);
-            this._lblSlideBarMinTempValue.Name = "_lblSlideBarMinTempValue";
-            this._lblSlideBarMinTempValue.Size = new System.Drawing.Size(25, 15);
-            this._lblSlideBarMinTempValue.TabIndex = 6;
-            this._lblSlideBarMinTempValue.Text = "-150";
+            this._lblMinTemp.AutoSize = true;
+            this._lblMinTemp.Font = new System.Drawing.Font("Trebuchet MS", 6.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._lblMinTemp.ForeColor = System.Drawing.Color.Red;
+            this._lblMinTemp.Location = new System.Drawing.Point(9, 44);
+            this._lblMinTemp.Name = "_lblMinTemp";
+            this._lblMinTemp.Size = new System.Drawing.Size(25, 15);
+            this._lblMinTemp.TabIndex = 6;
+            this._lblMinTemp.Text = "-150";
             // 
-            // _lblSlideBarMaxTempValue
+            // _lblMaxTemp
             // 
-            this._lblSlideBarMaxTempValue.AutoSize = true;
-            this._lblSlideBarMaxTempValue.Font = new System.Drawing.Font("Trebuchet MS", 6.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._lblSlideBarMaxTempValue.ForeColor = System.Drawing.Color.Yellow;
-            this._lblSlideBarMaxTempValue.Location = new System.Drawing.Point(278, 44);
-            this._lblSlideBarMaxTempValue.Name = "_lblSlideBarMaxTempValue";
-            this._lblSlideBarMaxTempValue.Size = new System.Drawing.Size(22, 15);
-            this._lblSlideBarMaxTempValue.TabIndex = 7;
-            this._lblSlideBarMaxTempValue.Text = "150";
+            this._lblMaxTemp.AutoSize = true;
+            this._lblMaxTemp.Font = new System.Drawing.Font("Trebuchet MS", 6.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._lblMaxTemp.ForeColor = System.Drawing.Color.Yellow;
+            this._lblMaxTemp.Location = new System.Drawing.Point(278, 44);
+            this._lblMaxTemp.Name = "_lblMaxTemp";
+            this._lblMaxTemp.Size = new System.Drawing.Size(22, 15);
+            this._lblMaxTemp.TabIndex = 7;
+            this._lblMaxTemp.Text = "150";
             // 
-            // _lblSlideBarZeroTempValue
+            // _lblZero
             // 
-            this._lblSlideBarZeroTempValue.AutoSize = true;
-            this._lblSlideBarZeroTempValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._lblSlideBarZeroTempValue.ForeColor = System.Drawing.Color.RoyalBlue;
-            this._lblSlideBarZeroTempValue.Location = new System.Drawing.Point(150, 45);
-            this._lblSlideBarZeroTempValue.Name = "_lblSlideBarZeroTempValue";
-            this._lblSlideBarZeroTempValue.Size = new System.Drawing.Size(10, 12);
-            this._lblSlideBarZeroTempValue.TabIndex = 7;
-            this._lblSlideBarZeroTempValue.Text = "0";
+            this._lblZero.AutoSize = true;
+            this._lblZero.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._lblZero.ForeColor = System.Drawing.Color.RoyalBlue;
+            this._lblZero.Location = new System.Drawing.Point(150, 45);
+            this._lblZero.Name = "_lblZero";
+            this._lblZero.Size = new System.Drawing.Size(10, 12);
+            this._lblZero.TabIndex = 7;
+            this._lblZero.Text = "0";
             // 
             // _panelFahrenheit
             // 
@@ -180,64 +180,67 @@ namespace TempConverter.GUI
             this._lblKelvin.TabIndex = 1;
             this._lblKelvin.Text = "K";
             // 
-            // _lblCelcius
+            // _lblCelsius
             // 
-            this._lblCelcius.AutoSize = true;
-            this._lblCelcius.BackColor = System.Drawing.Color.Transparent;
-            this._lblCelcius.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._lblCelcius.ForeColor = System.Drawing.Color.White;
-            this._lblCelcius.Location = new System.Drawing.Point(8, 86);
-            this._lblCelcius.Name = "_lblCelcius";
-            this._lblCelcius.Size = new System.Drawing.Size(14, 13);
-            this._lblCelcius.TabIndex = 1;
-            this._lblCelcius.Text = "C";
+            this._lblCelsius.AutoSize = true;
+            this._lblCelsius.BackColor = System.Drawing.Color.Transparent;
+            this._lblCelsius.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._lblCelsius.ForeColor = System.Drawing.Color.White;
+            this._lblCelsius.Location = new System.Drawing.Point(8, 86);
+            this._lblCelsius.Name = "_lblCelsius";
+            this._lblCelsius.Size = new System.Drawing.Size(14, 13);
+            this._lblCelsius.TabIndex = 1;
+            this._lblCelsius.Text = "C";
             // 
-            // _lblFarenheit
+            // _lblFahrenheit
             // 
-            this._lblFarenheit.AutoSize = true;
-            this._lblFarenheit.BackColor = System.Drawing.Color.Transparent;
-            this._lblFarenheit.Font = new System.Drawing.Font("Meiryo UI", 7.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._lblFarenheit.ForeColor = System.Drawing.Color.White;
-            this._lblFarenheit.Location = new System.Drawing.Point(9, 62);
-            this._lblFarenheit.Name = "_lblFarenheit";
-            this._lblFarenheit.Size = new System.Drawing.Size(13, 13);
-            this._lblFarenheit.TabIndex = 1;
-            this._lblFarenheit.Text = "F";
+            this._lblFahrenheit.AutoSize = true;
+            this._lblFahrenheit.BackColor = System.Drawing.Color.Transparent;
+            this._lblFahrenheit.Font = new System.Drawing.Font("Meiryo UI", 7.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._lblFahrenheit.ForeColor = System.Drawing.Color.White;
+            this._lblFahrenheit.Location = new System.Drawing.Point(9, 62);
+            this._lblFahrenheit.Name = "_lblFahrenheit";
+            this._lblFahrenheit.Size = new System.Drawing.Size(13, 13);
+            this._lblFahrenheit.TabIndex = 1;
+            this._lblFahrenheit.Text = "F";
             // 
             // _sliderBar
             // 
             this._sliderBar.Location = new System.Drawing.Point(8, 9);
+            this._sliderBar.Maximum = 150;
+            this._sliderBar.Minimum = -150;
             this._sliderBar.Name = "_sliderBar";
             this._sliderBar.Size = new System.Drawing.Size(293, 45);
             this._sliderBar.TabIndex = 1;
+            this._sliderBar.TickFrequency = 10;
             this._sliderBar.Scroll += new System.EventHandler(this.OnTrackBarScrolling);
             // 
-            // Form1
+            // Console
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(312, 151);
-            this.Controls.Add(this._lblSlideBarZeroTempValue);
-            this.Controls.Add(this._lblSlideBarMaxTempValue);
-            this.Controls.Add(this._lblSlideBarMinTempValue);
+            this.Controls.Add(this._lblZero);
+            this.Controls.Add(this._lblMaxTemp);
+            this.Controls.Add(this._lblMinTemp);
             this.Controls.Add(this._checkBoxRound);
-            this.Controls.Add(this._lblRoundValues);
+            this.Controls.Add(this._lblRound);
             this.Controls.Add(this._panelKelvin);
             this.Controls.Add(this._panelFahrenheit);
             this.Controls.Add(this._panelCelcius);
             this.Controls.Add(this._sliderBar);
-            this.Controls.Add(this._lblCelciusValue);
+            this.Controls.Add(this._lblCelsiusValue);
             this.Controls.Add(this._lblKelvinValue);
             this.Controls.Add(this._lblFahrenheitValue);
             this.Controls.Add(this._lblKelvin);
-            this.Controls.Add(this._lblCelcius);
-            this.Controls.Add(this._lblFarenheit);
+            this.Controls.Add(this._lblCelsius);
+            this.Controls.Add(this._lblFahrenheit);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(377, 202);
-            this.Name = "Form1";
+            this.Name = "Console";
             this.Text = "Temp+";
             ((System.ComponentModel.ISupportInitialize)(this._sliderBar)).EndInit();
             this.ResumeLayout(false);
@@ -249,19 +252,19 @@ namespace TempConverter.GUI
 
         private System.Windows.Forms.Label _lblFahrenheitValue;
         private System.Windows.Forms.Label _lblKelvinValue;
-        private System.Windows.Forms.Label _lblCelciusValue;
+        private System.Windows.Forms.Label _lblCelsiusValue;
         private TempConverter.GUI.Components.NoFocusTrackBar _sliderBar;
-        private System.Windows.Forms.Label _lblRoundValues;
+        private System.Windows.Forms.Label _lblRound;
         private System.Windows.Forms.CheckBox _checkBoxRound;
-        private System.Windows.Forms.Label _lblSlideBarMinTempValue;
-        private System.Windows.Forms.Label _lblSlideBarMaxTempValue;
-        private System.Windows.Forms.Label _lblSlideBarZeroTempValue;
+        private System.Windows.Forms.Label _lblMinTemp;
+        private System.Windows.Forms.Label _lblMaxTemp;
+        private System.Windows.Forms.Label _lblZero;
         private System.Windows.Forms.Panel _panelFahrenheit;
         private System.Windows.Forms.Panel _panelCelcius;
         private System.Windows.Forms.Panel _panelKelvin;
         private System.Windows.Forms.Label _lblKelvin;
-        private System.Windows.Forms.Label _lblCelcius;
-        private System.Windows.Forms.Label _lblFarenheit;
+        private System.Windows.Forms.Label _lblCelsius;
+        private System.Windows.Forms.Label _lblFahrenheit;
     }
 }
 

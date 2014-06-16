@@ -5,7 +5,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TempConverter.Model", "Temp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TempConverter.GUI", "TempConverter.GUI\TempConverter.GUI.csproj", "{EB69CD55-DA76-4B3B-BD4B-ADD549627E5D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TempConverter._UnitTests", "TempConverter.UnitTests\TempConverter._UnitTests.csproj", "{0DAB6EF5-7191-403C-8CD7-3F761FB01994}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TempConverter.UnitTests", "TempConverter.UnitTests\TempConverter.UnitTests.csproj", "{0DAB6EF5-7191-403C-8CD7-3F761FB01994}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{72474BF4-53FE-480E-B032-AB0909055490}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,5 +30,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0DAB6EF5-7191-403C-8CD7-3F761FB01994} = {72474BF4-53FE-480E-B032-AB0909055490}
 	EndGlobalSection
 EndGlobal

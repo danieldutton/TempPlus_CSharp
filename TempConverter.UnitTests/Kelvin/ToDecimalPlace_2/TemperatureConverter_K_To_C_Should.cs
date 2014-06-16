@@ -2,7 +2,7 @@
 using TempConverter.Model;
 using TempConverter.Model.Interfaces;
 
-namespace TempConverter._UnitTests.Kelvin.ToDecimalPlace_2
+namespace TempConverter.UnitTests.Kelvin.ToDecimalPlace_2
 {
     [TestFixture]
     public class TemperatureConverter_K_To_C_Should

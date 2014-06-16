@@ -3,11 +3,11 @@
     public struct Temperature<T> where T : struct
     {
         public T Fahrenheit { get; set; }
-        
-        public T Kelvin { get; set; }
-        
+
         public T Celsius { get; set; }
 
+        public T Kelvin { get; set; }
+        
 
         public Temperature(T fahrenheit, T celsius, T kelvin)
             :this()
@@ -19,8 +19,8 @@
         
         public override string ToString()
         {
-            return "[" + GetType().Name + "]" +
-                   string.Format(" Fahrenheit: {0} Celsius: {1} Kelvin: {2}", Fahrenheit, Celsius, Kelvin);
+            return string.Format("[{0}] Fahrenheit: {1} Celsius: {2} Kelvin: {3}",
+                GetType().Name, Fahrenheit, Celsius, Kelvin);
         }
     }
 }

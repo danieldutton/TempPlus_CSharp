@@ -6,7 +6,7 @@ using TempConverter.Model.Interfaces;
 
 namespace TempConverter.GUI
 {
-    public partial class Form1 : Form
+    public partial class Console : Form
     {
         private readonly ITemperatureConverter _tempConverter;
 
@@ -16,7 +16,8 @@ namespace TempConverter.GUI
 
         private const int GraphBarHeight = 8;
 
-        public Form1(ITemperatureConverter tempConverter, Scale<int> scale)
+
+        public Console(ITemperatureConverter tempConverter, Scale<int> scale)
         {
             _tempConverter = tempConverter;
             _panelPainter = new PanelPainter(GraphBarHeight);
@@ -41,18 +42,18 @@ namespace TempConverter.GUI
         }
         private void InitialiseLabels()
         {
-            _lblSlideBarMinTempValue.Text = _scale.Minimum.ToString();
-            _lblSlideBarZeroTempValue.Text = "0";
-            _lblSlideBarMaxTempValue.Text = _scale.Maximum.ToString();             
+            _lblMinTemp.Text = _scale.Minimum.ToString();
+            _lblZero.Text = "0";
+            _lblMaxTemp.Text = _scale.Maximum.ToString();             
         }
 
         private void InitialiseLabelToolTips()
         {
             var fahrenheitTTip = new ToolTip();
-            fahrenheitTTip.SetToolTip(_lblFarenheit, "Fahrenheit");
+            fahrenheitTTip.SetToolTip(_lblFahrenheit, "Fahrenheit");
 
             var celsiusTTip = new ToolTip();
-            celsiusTTip.SetToolTip(_lblCelcius, "Celsius");
+            celsiusTTip.SetToolTip(_lblCelsius, "Celsius");
 
             var kelvinTTip = new ToolTip();
             kelvinTTip.SetToolTip(_lblKelvin, "Kelvin");
@@ -79,7 +80,7 @@ namespace TempConverter.GUI
         private void UpdateTemperatureLabels(Temperature<double> temperature)
         {
             _lblFahrenheitValue.Text = temperature.Fahrenheit.ToString();
-            _lblCelciusValue.Text = temperature.Celsius.ToString();
+            _lblCelsiusValue.Text = temperature.Celsius.ToString();
             _lblKelvinValue.Text = temperature.Kelvin.ToString();
         }
 
@@ -108,7 +109,8 @@ namespace TempConverter.GUI
         private void CheckBoxRoundCheckedChanged(object sender, System.EventArgs e)
         {
            Temperature<double> temperatures = CalculateTemperatureValues(_sliderBar.Value);         
-            UpdateTemperatureLabels(temperatures);
+           
+           UpdateTemperatureLabels(temperatures);
         }
 
     }

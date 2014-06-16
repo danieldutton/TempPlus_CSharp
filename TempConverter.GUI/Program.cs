@@ -6,18 +6,18 @@ using TempConverter.Model.Interfaces;
 
 namespace TempConverter.GUI
 {
-    static class Program
+    internal static class Program
     {
         [STAThread]
-        static void Main()
+        internal static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            ITemperatureConverter tempConverter = new TemperatureConverter();            
+            ITemperatureConverter tempConverter = new TemperatureConverter();
 
-            var scale = new Scale<int> {Minimum = -150, Maximum = 150, ScaleBy = 3};
+            var scale = new Scale<int>(minimum: -150, maximum: 150, scaleBy: 3);
                       
-            Application.Run(new Form1(tempConverter, scale));
+            Application.Run(new Console(tempConverter, scale));
         }
     }
 }

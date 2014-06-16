@@ -15,6 +15,7 @@ namespace TempConverter.GUI
             GraphBarHeight = graphBarHeight;
         }
 
+        //ToDO duplicate code here, try and eliminate with delegates
         public void PaintFahrenheitPanel(PaintEventArgs e, Scale<int> scale)
         {
             var panelPaintArgs = e as PanelPaintEventArgs;
@@ -79,6 +80,11 @@ namespace TempConverter.GUI
                                                       width: (int) panelPaintArgs.Temperatures.Kelvin/
                                                              scale.ScaleBy*-1, height: GraphBarHeight);
             }
+        }
+
+        private void CastToPanelPaintEventArgs(PaintEventArgs e)
+        {
+            
         }
 
         private void RefreshPanelPaint(PaintEventArgs paintEventArgs)

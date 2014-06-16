@@ -109,9 +109,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\TempConverter.Model\TempConverter.Model.csproj">
       <Project>{8235e4b6-d2d4-4ae8-ae41-4e5f36c51e5e}</Project>
       <Name>TempConverter.Model</Name>

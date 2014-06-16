@@ -1,4 +1,4 @@
-﻿namespace TempConverter._UnitTests
+﻿namespace TempConverter.UnitTests
 {
     public static class Mother
     {
