@@ -213,7 +213,7 @@ namespace TempConverter.GUI
             this._sliderBar.Size = new System.Drawing.Size(293, 45);
             this._sliderBar.TabIndex = 1;
             this._sliderBar.TickFrequency = 10;
-            this._sliderBar.Scroll += new System.EventHandler(this.OnTrackBarScrolling);
+            this._sliderBar.Scroll += new System.EventHandler(this.OnTrackBarScroll);
             // 
             // Console
             // 

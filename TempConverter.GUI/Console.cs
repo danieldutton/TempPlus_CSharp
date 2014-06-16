@@ -29,27 +29,15 @@ namespace TempConverter.GUI
             _kelvinPainter = new PanelPainter();
             
             InitializeComponent();  
-            InitialiseLabels();
+            InitialiseScaleLabels();
             InitialiseLabelToolTips();  
         }
 
-        protected override void OnPaint(PaintEventArgs e)
-        {
-            UpdateTemperatureValues();          
-            base.OnPaint(e);
-        }        private void UpdateTemperatureValues()
-        {
-            double farenheit = _sliderBar.Value;
-            Temperature<double> temperatures = CalculateTemperatureValues(farenheit);
-
-            UpdateTemperatureLabels(temperatures);
-            FirePanelPaintingEvents(temperatures);
-        }
-        private void InitialiseLabels()
+        private void InitialiseScaleLabels()
         {
             _lblMinTemp.Text = _scale.Minimum.ToString();
             _lblZero.Text = "0";
-            _lblMaxTemp.Text = _scale.Maximum.ToString();             
+            _lblMaxTemp.Text = _scale.Maximum.ToString();
         }
 
         private void InitialiseLabelToolTips()
@@ -63,23 +51,39 @@ namespace TempConverter.GUI
             var kelvinTTip = new ToolTip();
             kelvinTTip.SetToolTip(_lblKelvin, "Kelvin");
         }
-     
-        private void OnTrackBarScrolling(object sender, System.EventArgs e)
-        {
-            UpdateTemperatureValues();
+
+        protected override void OnPaint(PaintEventArgs e)
+        {         
+            base.OnPaint(e);
+            CalculateTemperatures();
         }
 
+        private void OnTrackBarScroll(object sender, System.EventArgs e)
+        {
+            CalculateTemperatures();
+        }        private void CalculateTemperatures()
+        {
+            double fahrenheit = _sliderBar.Value;
+            Temperature<double> temperatures = CalculateTemperatureValues(fahrenheit);
+
+            UpdateTemperatureLabels(temperatures);
+            PaintTemperaturePanels(temperatures);
+        }
         private Temperature<double> CalculateTemperatureValues(double baseTemp, int roundBy = 0)
         {
-            if(!_checkBoxRound.Checked)
+            if(RoundingIsNeeded())
                 roundBy = 2;
 
-            return new Temperature<double>
-            {
-                Fahrenheit = baseTemp,
-                Celsius = _tempConverter.ConvertTemperature(baseTemp, TemperatureConverter.FahrenheitToCelsius, roundBy),
-                Kelvin = _tempConverter.ConvertTemperature(baseTemp, TemperatureConverter.FahrenheitToKelvin, roundBy),
-            };
+            double f = baseTemp;
+            double c = _tempConverter.ConvertTemperature(baseTemp, TemperatureConverter.FahrenheitToCelsius, roundBy);
+            double k = _tempConverter.ConvertTemperature(baseTemp, TemperatureConverter.FahrenheitToKelvin, roundBy);
+
+            return new Temperature<double>(f, c, k);
+        }
+
+        private bool RoundingIsNeeded()
+        {
+            return !_checkBoxRound.Checked;
         }
 
         private void UpdateTemperatureLabels(Temperature<double> temperature)
@@ -89,8 +93,9 @@ namespace TempConverter.GUI
             _lblKelvinValue.Text = temperature.Kelvin.ToString();
         }
 
-        private void FirePanelPaintingEvents(Temperature<double> temperature)
+        private void PaintTemperaturePanels(Temperature<double> temperature)
         {
+            //can we force paint direct without all this shizzle
             PaintFahrenheitPanel(null, new PanelPaintEventArgs(_panelFahrenheit.CreateGraphics(), temperature));
             PaintCelsiusPanel(null, new PanelPaintEventArgs(_panelCelcius.CreateGraphics(), temperature));
             PaintKelvinPanel(null, new PanelPaintEventArgs(_panelKelvin.CreateGraphics(), temperature));

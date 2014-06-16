@@ -2,11 +2,11 @@
 {
     public struct Temperature<T> where T : struct
     {
-        public T Fahrenheit { get; set; }
+        public T Fahrenheit { get; private set; }
 
-        public T Celsius { get; set; }
+        public T Celsius { get; private set; }
 
-        public T Kelvin { get; set; }
+        public T Kelvin { get; private set; }
         
 
         public Temperature(T fahrenheit, T celsius, T kelvin)
