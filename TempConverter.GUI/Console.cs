@@ -1,4 +1,5 @@
 ﻿using System.Windows.Forms;
+using TempConverter.GUI.Components;
 using TempConverter.GUI.EventArgs;
 using TempConverter.Model;
 using TempConverter.Model.Domain;
@@ -7,34 +8,45 @@ namespace TempConverter.GUI
 {
     public partial class Console : Form
     {
+        private readonly NoFocusTrackBar _trackBar;
+
         private readonly PanelPainter _fahrenheitPainter;
 
         private readonly PanelPainter _celsiusPainter;
 
         private readonly PanelPainter _kelvinPainter;
 
-        private readonly StandardConverter _tempConverter;
+        private readonly StandardTemperatureConverter _tempTemperatureConverter;
         
 
-        public Console(StandardConverter tempConverter)
+        public Console(StandardTemperatureConverter tempTemperatureConverter,
+            NoFocusTrackBar trackBar)
         {
             _fahrenheitPainter = new PanelPainter();
             _celsiusPainter = new PanelPainter();
             _kelvinPainter = new PanelPainter();
-            _tempConverter = tempConverter;
+            
+            _tempTemperatureConverter = tempTemperatureConverter;
+            _trackBar = trackBar; 
 
             InitializeComponent();
+            InitAndDisplayTrackBar();
             InitialiseScaleLabels();
-            CreateLabelToolTips();
-            CalculateTemperatures();
-            _panelCelcius.Refresh();
+            CreateLabelToolTips();  
+        }
+
+        private void InitAndDisplayTrackBar()
+        {
+            _trackBar.Scroll += OnTrackBarScroll;
+            
+            Controls.Add(_trackBar);
         }
 
         private void InitialiseScaleLabels()
         {
-            _lblMinTemp.Text = _sliderBar.TempScale.Minimum.ToString();
+            _lblMinTemp.Text = _trackBar.TempScale.Minimum.ToString();
             _lblZero.Text = "0";
-            _lblMaxTemp.Text = _sliderBar.TempScale.Maximum.ToString();
+            _lblMaxTemp.Text = _trackBar.TempScale.Maximum.ToString();
         }
 
         private void CreateLabelToolTips()
@@ -49,15 +61,23 @@ namespace TempConverter.GUI
             kelvinTTip.SetToolTip(_lblKelvin, "Kelvin");
         }
 
+        protected override void OnPaint(PaintEventArgs e)
+        {         
+            base.OnPaint(e);
+            UpdateTemperatures();
+        }
+
         private void OnTrackBarScroll(object sender, System.EventArgs e)
+        {            
+            UpdateTemperatures();
+        }
+
+        private void UpdateTemperatures()
         {
-            CalculateTemperatures();
-        }        //ambig method name with one below        private void CalculateTemperatures()
-        {
-            double fahrenheit = _sliderBar.Value;
+            double fahrenheit = _trackBar.Value;
+
             Temperature<double> temperatures = CalculateTemperatureValues(fahrenheit);
 
-            //side effects
             UpdateTemperatureLabels(temperatures);
             PaintTemperaturePanels(temperatures);
         }
@@ -67,8 +87,8 @@ namespace TempConverter.GUI
                 roundBy = 2;
 
             double f = baseTemp;
-            double c = _tempConverter.ConvertTemperature(baseTemp, StandardConverter.FahrenheitToCelsius, roundBy);
-            double k = _tempConverter.ConvertTemperature(baseTemp, StandardConverter.FahrenheitToKelvin, roundBy);
+            double c = _tempTemperatureConverter.Convert(baseTemp, StandardTemperatureConverter.FahrenheitToCelsius, roundBy);
+            double k = _tempTemperatureConverter.Convert(baseTemp, StandardTemperatureConverter.FahrenheitToKelvin, roundBy);
 
             return new Temperature<double>(f, c, k);
         }
@@ -118,10 +138,9 @@ namespace TempConverter.GUI
 
         private void RoundTemperatureCheckBoxChanged(object sender, System.EventArgs e)
         {
-           Temperature<double> temperatures = CalculateTemperatureValues(_sliderBar.Value);         
+           Temperature<double> temperatures = CalculateTemperatureValues(_trackBar.Value);         
            
            UpdateTemperatureLabels(temperatures);
-           PaintTemperaturePanels(temperatures);
         }
 
     }

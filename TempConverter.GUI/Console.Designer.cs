@@ -1,5 +1,4 @@
-﻿
-using TempConverter.GUI.Components;
+﻿using TempConverter.GUI.Components;
 using TempConverter.Model.Domain;
 
 namespace TempConverter.GUI
@@ -47,7 +46,6 @@ namespace TempConverter.GUI
             this._lblKelvin = new System.Windows.Forms.Label();
             this._lblCelsius = new System.Windows.Forms.Label();
             this._lblFahrenheit = new System.Windows.Forms.Label();
-            this._sliderBar = new NoFocusTrackBar(new Scale<int>(-150, 150, 3));
             this.SuspendLayout();
             // 
             // _lblFahrenheitValue
@@ -202,19 +200,8 @@ namespace TempConverter.GUI
             this._lblFahrenheit.Name = "_lblFahrenheit";
             this._lblFahrenheit.Size = new System.Drawing.Size(13, 13);
             this._lblFahrenheit.TabIndex = 1;
-            this._lblFahrenheit.Text = "F";
-            // 
-            // _sliderBar
-            // 
-            this._sliderBar.Location = new System.Drawing.Point(8, 9);
-            this._sliderBar.Maximum = 150;
-            this._sliderBar.Minimum = -150;
-            this._sliderBar.Name = "_sliderBar";
-            this._sliderBar.Size = new System.Drawing.Size(293, 45);
-            this._sliderBar.TabIndex = 1;
-            this._sliderBar.TickFrequency = 10;
-            this._sliderBar.Scroll += new System.EventHandler(this.OnTrackBarScroll);
-            // 
+            this._lblFahrenheit.Text = "F";        
+            
             // Console
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -229,7 +216,6 @@ namespace TempConverter.GUI
             this.Controls.Add(this._panelKelvin);
             this.Controls.Add(this._panelFahrenheit);
             this.Controls.Add(this._panelCelcius);
-            this.Controls.Add(this._sliderBar);
             this.Controls.Add(this._lblCelsiusValue);
             this.Controls.Add(this._lblKelvinValue);
             this.Controls.Add(this._lblFahrenheitValue);
@@ -242,7 +228,6 @@ namespace TempConverter.GUI
             this.MaximumSize = new System.Drawing.Size(377, 202);
             this.Name = "Console";
             this.Text = "Temp+";
-            ((System.ComponentModel.ISupportInitialize)(this._sliderBar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -253,7 +238,6 @@ namespace TempConverter.GUI
         private System.Windows.Forms.Label _lblFahrenheitValue;
         private System.Windows.Forms.Label _lblKelvinValue;
         private System.Windows.Forms.Label _lblCelsiusValue;
-        private TempConverter.GUI.Components.NoFocusTrackBar _sliderBar;
         private System.Windows.Forms.Label _lblRound;
         private System.Windows.Forms.CheckBox _checkBoxRound;
         private System.Windows.Forms.Label _lblMinTemp;

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
+using TempConverter.GUI.Components;
 using TempConverter.Model;
+using TempConverter.Model.Domain;
 
 namespace TempConverter.GUI
 {
@@ -21,9 +23,10 @@ namespace TempConverter.GUI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             
-            var tempConverter = new StandardConverter();
+            var tempConverter = new StandardTemperatureConverter();
+            var noFocusTrackBar = new NoFocusTrackBar(new Scale<int>(minimum: -150, maximum: 150, scaleBy: 3));
 
-            Application.Run(new Console(tempConverter));
+            Application.Run(new Console(tempConverter, noFocusTrackBar));
         }
 
 

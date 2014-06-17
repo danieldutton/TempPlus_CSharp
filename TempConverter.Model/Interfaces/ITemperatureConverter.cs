@@ -2,6 +2,6 @@
 {
     public interface ITemperatureConverter
     {
-        double ConvertTemperature(double temperature, ConversionFormula conversionFormula, int roundBy = 0);
+        double Convert(double temperature, ConversionFormula conversionFormula, int roundBy = 0);
     }
 }

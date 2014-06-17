@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using TempConverter.Model.Domain;
 
@@ -26,6 +27,8 @@ namespace TempConverter.GUI.Components
         {
             SetRange(TempScale.Minimum, TempScale.Maximum);
             TickFrequency = 10;
+            Location = new Point(x: 8,y: 9);
+            Size = new Size(width: 293, height: 45);
         }
 
         private static int MakeParam(int loWord, int hiWord)

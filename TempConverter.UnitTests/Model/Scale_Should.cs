@@ -9,7 +9,7 @@ namespace TempConverter.UnitTests.Model
         [Test]
         public void ToString_ReturnTheCorrectStringValue()
         {
-            var sut = new Scale<int>(-150, 150, 3);
+            var sut = new Scale<int>(minimum: -150, maximum: 150, scaleBy: 3);
 
             const string expected = "[Scale`1] Minimum: -150 Maximum: 150 ScaleBy: 3";
             string actual = sut.ToString();
