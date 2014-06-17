@@ -2,7 +2,7 @@
 
 App to be used for earth temperature, not scientific temperatures
 
-Hottest Temperature ever recorded on in earth in Fahrenheit = 136.4F - Death Valley Greenland Ranch, Death Valley, California
+Hottest Temperature ever recorded on earth in Fahrenheit = 136.4F - Death Valley Greenland Ranch, Death Valley, California
 Coldest Temperature ever recorded on earth in Fahrenheit = -128.6F - Soviet Vostok Station, Antarctica
 
 Therefore, giving leeway the scale of -150F to 150F is adopted.  
@@ -13,3 +13,5 @@ Testing Scales are therefore
 Fahrenheit - minus 150 to plus 150
 Celsius -    minus 100 to plus 70
 Kelvin -     plus  170 to plus 340
+
+note that Scale.cs is set in Console.Designer.cs

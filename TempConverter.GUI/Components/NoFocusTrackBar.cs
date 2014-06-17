@@ -12,17 +12,19 @@ namespace TempConverter.GUI.Components
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         public extern static int SendMessage(IntPtr hWnd, uint msg, int wParam, int lParam);
 
-        private Scale<int> _scale;
+        private readonly Scale<int> _tempScale;
+
+        public Scale<int> TempScale{get { return _tempScale; }} 
 
         public NoFocusTrackBar(Scale<int> scale)
         {
-            _scale = scale;
+            _tempScale = scale;
             Init();
         }
 
         private void Init()
         {
-            SetRange(_scale.Minimum, _scale.Maximum);
+            SetRange(TempScale.Minimum, TempScale.Maximum);
             TickFrequency = 10;
         }
 

@@ -2,45 +2,42 @@
 using TempConverter.GUI.EventArgs;
 using TempConverter.Model;
 using TempConverter.Model.Domain;
-using TempConverter.Model.Interfaces;
 
 namespace TempConverter.GUI
 {
     public partial class Console : Form
     {
-        private readonly ITemperatureConverter _tempConverter;
-
         private readonly PanelPainter _fahrenheitPainter;
 
         private readonly PanelPainter _celsiusPainter;
 
         private readonly PanelPainter _kelvinPainter;
+
+        private readonly StandardConverter _tempConverter;
         
-        private Scale<int> _scale;
 
-
-        public Console(ITemperatureConverter tempConverter, Scale<int> scale)
+        public Console(StandardConverter tempConverter)
         {
-            _tempConverter = tempConverter;
-            _scale = scale;
-
             _fahrenheitPainter = new PanelPainter();
             _celsiusPainter = new PanelPainter();
             _kelvinPainter = new PanelPainter();
-            
-            InitializeComponent();  
+            _tempConverter = tempConverter;
+
+            InitializeComponent();
             InitialiseScaleLabels();
-            InitialiseLabelToolTips();  
+            CreateLabelToolTips();
+            CalculateTemperatures();
+            _panelCelcius.Refresh();
         }
 
         private void InitialiseScaleLabels()
         {
-            _lblMinTemp.Text = _scale.Minimum.ToString();
+            _lblMinTemp.Text = _sliderBar.TempScale.Minimum.ToString();
             _lblZero.Text = "0";
-            _lblMaxTemp.Text = _scale.Maximum.ToString();
+            _lblMaxTemp.Text = _sliderBar.TempScale.Maximum.ToString();
         }
 
-        private void InitialiseLabelToolTips()
+        private void CreateLabelToolTips()
         {
             var fahrenheitTTip = new ToolTip();
             fahrenheitTTip.SetToolTip(_lblFahrenheit, "Fahrenheit");
@@ -52,20 +49,15 @@ namespace TempConverter.GUI
             kelvinTTip.SetToolTip(_lblKelvin, "Kelvin");
         }
 
-        protected override void OnPaint(PaintEventArgs e)
-        {         
-            base.OnPaint(e);
-            CalculateTemperatures();
-        }
-
         private void OnTrackBarScroll(object sender, System.EventArgs e)
         {
             CalculateTemperatures();
-        }        private void CalculateTemperatures()
+        }        //ambig method name with one below        private void CalculateTemperatures()
         {
             double fahrenheit = _sliderBar.Value;
             Temperature<double> temperatures = CalculateTemperatureValues(fahrenheit);
 
+            //side effects
             UpdateTemperatureLabels(temperatures);
             PaintTemperaturePanels(temperatures);
         }
@@ -75,8 +67,8 @@ namespace TempConverter.GUI
                 roundBy = 2;
 
             double f = baseTemp;
-            double c = _tempConverter.ConvertTemperature(baseTemp, TemperatureConverter.FahrenheitToCelsius, roundBy);
-            double k = _tempConverter.ConvertTemperature(baseTemp, TemperatureConverter.FahrenheitToKelvin, roundBy);
+            double c = _tempConverter.ConvertTemperature(baseTemp, StandardConverter.FahrenheitToCelsius, roundBy);
+            double k = _tempConverter.ConvertTemperature(baseTemp, StandardConverter.FahrenheitToKelvin, roundBy);
 
             return new Temperature<double>(f, c, k);
         }
@@ -95,7 +87,6 @@ namespace TempConverter.GUI
 
         private void PaintTemperaturePanels(Temperature<double> temperature)
         {
-            //can we force paint direct without all this shizzle
             PaintFahrenheitPanel(null, new PanelPaintEventArgs(_panelFahrenheit.CreateGraphics(), temperature));
             PaintCelsiusPanel(null, new PanelPaintEventArgs(_panelCelcius.CreateGraphics(), temperature));
             PaintKelvinPanel(null, new PanelPaintEventArgs(_panelKelvin.CreateGraphics(), temperature));
@@ -106,7 +97,7 @@ namespace TempConverter.GUI
             var panelPaint = e as PanelPaintEventArgs;
             if (panelPaint == null) return;
 
-            _fahrenheitPainter.PaintFahrenheitPanel(e, panelPaint.Temperatures.Fahrenheit);
+            _fahrenheitPainter.PaintPanels(e, panelPaint.Temperatures.Fahrenheit);
         }
 
         private void PaintCelsiusPanel(object sender, PaintEventArgs e)
@@ -114,7 +105,7 @@ namespace TempConverter.GUI
             var panelPaint = e as PanelPaintEventArgs;
             if (panelPaint == null) return;
 
-            _celsiusPainter.PaintFahrenheitPanel(e, panelPaint.Temperatures.Celsius);
+            _celsiusPainter.PaintPanels(e, panelPaint.Temperatures.Celsius);
         }
 
         private void PaintKelvinPanel(object sender, PaintEventArgs e)
@@ -122,14 +113,15 @@ namespace TempConverter.GUI
             var panelPaint = e as PanelPaintEventArgs;
             if (panelPaint == null) return;
 
-            _kelvinPainter.PaintFahrenheitPanel(e, panelPaint.Temperatures.Kelvin);
+            _kelvinPainter.PaintPanels(e, panelPaint.Temperatures.Kelvin);
         }
 
-        private void CheckBoxRoundCheckedChanged(object sender, System.EventArgs e)
+        private void RoundTemperatureCheckBoxChanged(object sender, System.EventArgs e)
         {
            Temperature<double> temperatures = CalculateTemperatureValues(_sliderBar.Value);         
            
            UpdateTemperatureLabels(temperatures);
+           PaintTemperaturePanels(temperatures);
         }
 
     }

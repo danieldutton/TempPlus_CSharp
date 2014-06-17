@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
 using TempConverter.Model;
-using TempConverter.Model.Domain;
-using TempConverter.Model.Interfaces;
 
 namespace TempConverter.GUI
 {
@@ -11,13 +9,28 @@ namespace TempConverter.GUI
         [STAThread]
         internal static void Main()
         {
+            //For UI thread exceptions
+            Application.ThreadException += GlobalExceptionHandler;
+
+            //Force all Windows Forms errors to go through our handler
+            Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
+
+            //For non-UI thread exceptions
+            AppDomain.CurrentDomain.UnhandledException += GlobalExceptionHandler;
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            ITemperatureConverter tempConverter = new TemperatureConverter();
+            
+            var tempConverter = new StandardConverter();
 
-            var scale = new Scale<int>(minimum: -150, maximum: 150, scaleBy: 3);
-                      
-            Application.Run(new Console(tempConverter, scale));
+            Application.Run(new Console(tempConverter));
+        }
+
+
+        private static void GlobalExceptionHandler(object sender, System.EventArgs args)
+        {
+            MessageBox.Show("There was a problem with the application.  Please contact the author");
+            Application.Exit();
         }
     }
 }

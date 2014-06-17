@@ -106,7 +106,7 @@ namespace TempConverter.GUI
             this._checkBoxRound.Size = new System.Drawing.Size(15, 14);
             this._checkBoxRound.TabIndex = 5;
             this._checkBoxRound.UseVisualStyleBackColor = true;
-            this._checkBoxRound.CheckedChanged += new System.EventHandler(this.CheckBoxRoundCheckedChanged);
+            this._checkBoxRound.CheckedChanged += new System.EventHandler(this.RoundTemperatureCheckBoxChanged);
             // 
             // _lblMinTemp
             // 
