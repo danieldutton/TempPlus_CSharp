@@ -5,7 +5,7 @@ using TempConverter.Model.Interfaces;
 namespace TempConverter.UnitTests.Standard.Celsius.ToDecimalPlace_2
 {
     [TestFixture]
-    public class TemperatureConverter_C_To_F_Should
+    public class StandardConverter_C_To_F_Should
     {
         private ConversionFormula _celsiusToFahrenheit;
 

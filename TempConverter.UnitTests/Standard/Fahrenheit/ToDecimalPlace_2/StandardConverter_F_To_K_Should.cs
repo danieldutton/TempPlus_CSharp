@@ -5,7 +5,7 @@ using TempConverter.Model.Interfaces;
 namespace TempConverter.UnitTests.Standard.Fahrenheit.ToDecimalPlace_2
 {
     [TestFixture]
-    public class TemperatureConverter_F_To_K_Should
+    public class StandardConverter_F_To_K_Should
     {
         private ConversionFormula _fahrenheitToKelvin;
 

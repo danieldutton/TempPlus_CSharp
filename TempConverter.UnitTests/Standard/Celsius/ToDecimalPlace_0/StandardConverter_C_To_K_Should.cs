@@ -5,7 +5,7 @@ using TempConverter.Model.Interfaces;
 namespace TempConverter.UnitTests.Standard.Celsius.ToDecimalPlace_0
 {
     [TestFixture]
-    public class TemperatureConverter_C_To_K_Should
+    public class StandardConverter_C_To_K_Should
     {
         private ConversionFormula _celsiusToKelvin;
 

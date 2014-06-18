@@ -1,5 +1,8 @@
 ﻿Tests assume the following:-
 
+STANDARD
+--------
+
 App to be used for earth temperature, not scientific temperatures
 
 Hottest Temperature ever recorded on earth in Fahrenheit = 136.4F - Death Valley Greenland Ranch, Death Valley, California
@@ -14,4 +17,7 @@ Fahrenheit - minus 150 to plus 150
 Celsius -    minus 100 to plus 70
 Kelvin -     plus  170 to plus 340
 
-note that Scale.cs is set in Console.Designer.cs
+
+SCIENTIFIC
+----------
+
