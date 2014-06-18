@@ -16,17 +16,17 @@ namespace TempConverter.GUI
 
         private readonly PanelPainter _kelvinPainter;
 
-        private readonly StandardTemperatureConverter _tempTemperatureConverter;
+        private readonly StandardConverter _tempConverter;
         
 
-        public Console(StandardTemperatureConverter tempTemperatureConverter,
+        public Console(StandardConverter tempConverter,
             NoFocusTrackBar trackBar)
         {
             _fahrenheitPainter = new PanelPainter();
             _celsiusPainter = new PanelPainter();
             _kelvinPainter = new PanelPainter();
             
-            _tempTemperatureConverter = tempTemperatureConverter;
+            _tempConverter = tempConverter;
             _trackBar = trackBar; 
 
             InitializeComponent();
@@ -87,8 +87,8 @@ namespace TempConverter.GUI
                 roundBy = 2;
 
             double f = baseTemp;
-            double c = _tempTemperatureConverter.Convert(baseTemp, StandardTemperatureConverter.FahrenheitToCelsius, roundBy);
-            double k = _tempTemperatureConverter.Convert(baseTemp, StandardTemperatureConverter.FahrenheitToKelvin, roundBy);
+            double c = _tempConverter.Convert(baseTemp, StandardConverter.FahrenheitToCelsius, roundBy);
+            double k = _tempConverter.Convert(baseTemp, StandardConverter.FahrenheitToKelvin, roundBy);
 
             return new Temperature<double>(f, c, k);
         }

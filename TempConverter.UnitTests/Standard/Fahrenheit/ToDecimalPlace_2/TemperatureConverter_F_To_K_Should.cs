@@ -1,14 +1,15 @@
 ﻿using NUnit.Framework;
 using TempConverter.Model;
+using TempConverter.Model.Interfaces;
 
-namespace TempConverter.UnitTests.Fahrenheit.ToDecimalPlace_2
+namespace TempConverter.UnitTests.Standard.Fahrenheit.ToDecimalPlace_2
 {
     [TestFixture]
     public class TemperatureConverter_F_To_K_Should
     {
         private ConversionFormula _fahrenheitToKelvin;
 
-        private StandardTemperatureConverter _sut;
+        private ITemperatureConverter _sut;
 
         private const int RoundBy = 2;
 
@@ -17,8 +18,8 @@ namespace TempConverter.UnitTests.Fahrenheit.ToDecimalPlace_2
         [SetUp]
         public void Init()
         {
-            _fahrenheitToKelvin = StandardTemperatureConverter.FahrenheitToKelvin;
-            _sut = new StandardTemperatureConverter();
+            _fahrenheitToKelvin = StandardConverter.FahrenheitToKelvin;
+            _sut = new StandardConverter();
         }
 
         #region Fahrenheit To Kelvin Positive Values

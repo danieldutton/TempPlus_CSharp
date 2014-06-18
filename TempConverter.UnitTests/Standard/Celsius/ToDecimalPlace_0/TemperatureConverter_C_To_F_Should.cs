@@ -1,14 +1,15 @@
 ﻿using NUnit.Framework;
 using TempConverter.Model;
+using TempConverter.Model.Interfaces;
 
-namespace TempConverter.UnitTests.Celsius.ToDecimalPlace_0
+namespace TempConverter.UnitTests.Standard.Celsius.ToDecimalPlace_0
 {
     [TestFixture]
     public class TemperatureConverter_C_To_F_Should
     {
         private ConversionFormula _celsiusToFahrenheit;
 
-        private StandardTemperatureConverter _sut;
+        private ITemperatureConverter _sut;
 
         private const int RoundBy = 0;
 
@@ -16,8 +17,8 @@ namespace TempConverter.UnitTests.Celsius.ToDecimalPlace_0
         [SetUp]
         public void Init()
         {
-            _celsiusToFahrenheit = StandardTemperatureConverter.CelsiusToFahrenheit;
-            _sut = new StandardTemperatureConverter();
+            _celsiusToFahrenheit = StandardConverter.CelsiusToFahrenheit;
+            _sut = new StandardConverter();
         }
 
         #region Celsius To Fahrenheit Positive Values

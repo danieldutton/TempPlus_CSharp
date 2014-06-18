@@ -1,22 +1,23 @@
 ﻿using NUnit.Framework;
 using TempConverter.Model;
+using TempConverter.Model.Interfaces;
 
-namespace TempConverter.UnitTests.Kelvin.ToDecimalPlace_0
+namespace TempConverter.UnitTests.Standard.Kelvin.ToDecimalPlace_0
 {
     [TestFixture]
     public class TemperatureConverter_K_To_C_Should
     {
         private ConversionFormula _kelvinToCelsius;
 
-        private StandardTemperatureConverter _sut;
+        private ITemperatureConverter _sut;
 
         private const int RoundBy = 0;
 
         [SetUp]
         public void Init()
         {
-            _kelvinToCelsius = StandardTemperatureConverter.KelvinToCelsius;
-            _sut = new StandardTemperatureConverter();
+            _kelvinToCelsius = StandardConverter.KelvinToCelsius;
+            _sut = new StandardConverter();
         }
 
         #region Kelvin To Celsius Positive Values

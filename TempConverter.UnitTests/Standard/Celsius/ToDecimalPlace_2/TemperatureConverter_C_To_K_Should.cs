@@ -1,14 +1,15 @@
 ﻿using NUnit.Framework;
 using TempConverter.Model;
+using TempConverter.Model.Interfaces;
 
-namespace TempConverter.UnitTests.Celsius.ToDecimalPlace_2
+namespace TempConverter.UnitTests.Standard.Celsius.ToDecimalPlace_2
 {
     [TestFixture]
     public class TemperatureConverter_C_To_K_Should
     {
         private ConversionFormula _celsiusToKelvin;
 
-        private StandardTemperatureConverter _sut;
+        private ITemperatureConverter _sut;
 
         private const int RoundBy = 2;
 
@@ -17,8 +18,8 @@ namespace TempConverter.UnitTests.Celsius.ToDecimalPlace_2
         [SetUp]
         public void Init()
         {
-            _celsiusToKelvin = StandardTemperatureConverter.CelsiusToKelvin;
-            _sut = new StandardTemperatureConverter();
+            _celsiusToKelvin = StandardConverter.CelsiusToKelvin;
+            _sut = new StandardConverter();
         }
 
         #region Celsius To Kelvin Positive Values

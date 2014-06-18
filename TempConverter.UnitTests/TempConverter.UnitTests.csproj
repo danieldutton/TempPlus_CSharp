@@ -38,18 +38,18 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Celsius\ToDecimalPlace_0\TemperatureConverter_C_To_F_Should.cs" />
-    <Compile Include="Celsius\ToDecimalPlace_0\TemperatureConverter_C_To_K_Should.cs" />
-    <Compile Include="Celsius\ToDecimalPlace_2\TemperatureConverter_C_To_F_Should.cs" />
-    <Compile Include="Celsius\ToDecimalPlace_2\TemperatureConverter_C_To_K_Should.cs" />
-    <Compile Include="Fahrenheit\ToDecimalPlace_0\TemperatureConverter_F_To_C_Should.cs" />
-    <Compile Include="Fahrenheit\ToDecimalPlace_0\TemperatureConverter_F_To_K_Should.cs" />
-    <Compile Include="Fahrenheit\ToDecimalPlace_2\TemperatureConverter_F_To_C_Should.cs" />
-    <Compile Include="Fahrenheit\ToDecimalPlace_2\TemperatureConverter_F_To_K_Should.cs" />
-    <Compile Include="Kelvin\ToDecimalPlace_0\TemperatureConverter_K_To_C_Should.cs" />
-    <Compile Include="Kelvin\ToDecimalPlace_0\TemperatureConverter_K_To_F_Should.cs" />
-    <Compile Include="Kelvin\ToDecimalPlace_2\TemperatureConverter_K_To_C_Should.cs" />
-    <Compile Include="Kelvin\ToDecimalPlace_2\TemperatureConverter_K_To_F_Should.cs" />
+    <Compile Include="Standard\Celsius\ToDecimalPlace_0\TemperatureConverter_C_To_F_Should.cs" />
+    <Compile Include="Standard\Celsius\ToDecimalPlace_0\TemperatureConverter_C_To_K_Should.cs" />
+    <Compile Include="Standard\Celsius\ToDecimalPlace_2\TemperatureConverter_C_To_F_Should.cs" />
+    <Compile Include="Standard\Celsius\ToDecimalPlace_2\TemperatureConverter_C_To_K_Should.cs" />
+    <Compile Include="Standard\Fahrenheit\ToDecimalPlace_0\TemperatureConverter_F_To_C_Should.cs" />
+    <Compile Include="Standard\Fahrenheit\ToDecimalPlace_0\TemperatureConverter_F_To_K_Should.cs" />
+    <Compile Include="Standard\Fahrenheit\ToDecimalPlace_2\TemperatureConverter_F_To_C_Should.cs" />
+    <Compile Include="Standard\Fahrenheit\ToDecimalPlace_2\TemperatureConverter_F_To_K_Should.cs" />
+    <Compile Include="Standard\Kelvin\ToDecimalPlace_0\TemperatureConverter_K_To_C_Should.cs" />
+    <Compile Include="Standard\Kelvin\ToDecimalPlace_0\TemperatureConverter_K_To_F_Should.cs" />
+    <Compile Include="Standard\Kelvin\ToDecimalPlace_2\TemperatureConverter_K_To_C_Should.cs" />
+    <Compile Include="Standard\Kelvin\ToDecimalPlace_2\TemperatureConverter_K_To_F_Should.cs" />
     <Compile Include="Model\Scale_Should.cs" />
     <Compile Include="Model\Temperature_Should.cs" />
     <Compile Include="Mother.cs" />
@@ -66,6 +66,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Scientific\Kelvin\ToDecimalPlace_0\" />
+    <Folder Include="Scientific\Kelvin\ToDecimalPlace_2\" />
+    <Folder Include="Scientific\Rankine\ToDecimalPlace_0\" />
+    <Folder Include="Scientific\Rankine\ToDecimalPlace_2\" />
+    <Folder Include="Scientific\Reaumur\ToDecimalPlace_0\" />
+    <Folder Include="Scientific\Reaumur\ToDecimalPlace_2\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
