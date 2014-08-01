@@ -21,7 +21,7 @@ namespace TempConverter.GUI
                 RefreshPanelPaint(_paintEventArgs);
                 _paintEventArgs.Graphics.FillRectangle(new SolidBrush(Color.Yellow), XPos, YPos,
                     width: (int)temp/
-                           3, height: GraphBarHeight);
+                           4, height: GraphBarHeight);
             }
 
             if (temp < 0)
@@ -29,7 +29,7 @@ namespace TempConverter.GUI
                 RefreshPanelPaint(_paintEventArgs);
                 _paintEventArgs.Graphics.FillRectangle(new SolidBrush(Color.Red), XPos, YPos,
                     width: (int)temp/
-                           3*-1, height: GraphBarHeight);
+                           4*-1, height: GraphBarHeight);
             }
         }
 

@@ -22,9 +22,47 @@ namespace TempConverter.UnitTests.Standard.Kelvin.ToDecimalPlace_2
             _sut = new StandardConverter();
         }
 
+        #region Positive Values
+
         [Test, Sequential]
-        public void ConvertKelvinToFahrenheitRange_170_To_180_RoundedTo2DP([Range(170d, 180d, 1d)]double temperature,
-                    [Values(-153.67, -151.87, -150.07, -148.27, -146.47, -144.67, -142.87, -141.07, -139.27, -137.47, -135.67)]double expected)
+        public void ConvertKelvinToFahrenheitRange_130_To_140_RoundedTo2DP([Range(130d, 140d, 1d)]double temperature,
+                    [Values(-225.67, -223.87, -222.07, -220.27, -218.47, -216.67, -214.87, -213.07, -211.27, -209.47, -207.67)]double expected)
+        {
+            double actual = _sut.Convert(temperature, _kelvinToFahrenheit, RoundBy);
+
+            Assert.AreEqual(expected, actual, _toleranceLevel);
+        }
+
+        [Test, Sequential]
+        public void ConvertKelvinToFahrenheitRange_141_To_150_RoundedTo2DP([Range(141d, 150d, 1d)]double temperature,
+                    [Values(-205.87, -204.07, -202.27, -200.47, -198.67, -196.87, -195.07, -193.27, -191.47, -189.67)]double expected)
+        {
+            double actual = _sut.Convert(temperature, _kelvinToFahrenheit, RoundBy);
+
+            Assert.AreEqual(expected, actual, _toleranceLevel);
+        }
+
+        [Test, Sequential]
+        public void ConvertKelvinToFahrenheitRange_151_To_160_RoundedTo2DP([Range(151d, 160d, 1d)]double temperature,
+                    [Values(-187.87, -186.07, -184.27, -182.47, -180.67, -178.87, -177.07, -175.27, -173.47, -171.67)]double expected)
+        {
+            double actual = _sut.Convert(temperature, _kelvinToFahrenheit, RoundBy);
+
+            Assert.AreEqual(expected, actual, _toleranceLevel);
+        }
+
+        [Test, Sequential]
+        public void ConvertKelvinToFahrenheitRange_161_To_170_RoundedTo2DP([Range(161d, 170d, 1d)]double temperature,
+                    [Values(-169.87, -168.07, -166.27, -164.47, -162.67, -160.87, -159.07, -157.27, -155.47, -153.67)]double expected)
+        {
+            double actual = _sut.Convert(temperature, _kelvinToFahrenheit, RoundBy);
+
+            Assert.AreEqual(expected, actual, _toleranceLevel);
+        }
+
+        [Test, Sequential]
+        public void ConvertKelvinToFahrenheitRange_171_To_180_RoundedTo2DP([Range(171d, 180d, 1d)]double temperature,
+                    [Values(-151.87, -150.07, -148.27, -146.47, -144.67, -142.87, -141.07, -139.27, -137.47, -135.67)]double expected)
         {
             double actual = _sut.Convert(temperature, _kelvinToFahrenheit, RoundBy);
 
@@ -174,6 +212,44 @@ namespace TempConverter.UnitTests.Standard.Kelvin.ToDecimalPlace_2
 
             Assert.AreEqual(expected, actual, _toleranceLevel);
         }
+
+        [Test, Sequential]
+        public void ConvertKelvinToFahrenheitRange_341_To_350_RoundedTo2DP([Range(341d, 350d, 1d)]double temperature,
+                    [Values(154.13, 155.93, 157.73, 159.53, 161.33, 163.13, 164.93, 166.73, 168.53, 170.33)]double expected)
+        {
+            double actual = _sut.Convert(temperature, _kelvinToFahrenheit, RoundBy);
+
+            Assert.AreEqual(expected, actual, _toleranceLevel);
+        }
+
+        [Test, Sequential]
+        public void ConvertKelvinToFahrenheitRange_351_To_360_RoundedTo2DP([Range(351d, 360d, 1d)]double temperature,
+                    [Values(172.13, 173.93, 175.73, 177.53, 179.33, 181.13, 182.93, 184.73, 186.53, 188.33)]double expected)
+        {
+            double actual = _sut.Convert(temperature, _kelvinToFahrenheit, RoundBy);
+
+            Assert.AreEqual(expected, actual, _toleranceLevel);
+        }
+
+        [Test, Sequential]
+        public void ConvertKelvinToFahrenheitRange_361_To_370_RoundedTo2DP([Range(361d, 370d, 1d)]double temperature,
+                    [Values(190.13, 191.93, 193.73, 195.53, 197.33, 199.13, 200.93, 202.73, 204.53, 206.33)]double expected)
+        {
+            double actual = _sut.Convert(temperature, _kelvinToFahrenheit, RoundBy);
+
+            Assert.AreEqual(expected, actual, _toleranceLevel);
+        }
+
+        [Test, Sequential]
+        public void ConvertKelvinToFahrenheitRange_371_To_380_RoundedTo2DP([Range(371d, 380d, 1d)]double temperature,
+                    [Values(208.13, 209.93, 211.73, 213.53, 215.33, 217.13, 218.93, 220.73, 222.53, 224.33)]double expected)
+        {
+            double actual = _sut.Convert(temperature, _kelvinToFahrenheit, RoundBy);
+
+            Assert.AreEqual(expected, actual, _toleranceLevel);
+        }
+
+        #endregion
 
         [TearDown]
         public void TearDown()

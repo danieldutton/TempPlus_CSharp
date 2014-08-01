@@ -22,9 +22,47 @@ namespace TempConverter.UnitTests.Standard.Kelvin.ToDecimalPlace_2
             _sut = new StandardConverter();
         }
 
+        #region Positive Values
+
         [Test, Sequential]
-        public void ConvertKelvinToCelsiusRange_170_To_180_RoundedTo2DP([Range(170d, 180d, 1d)]double temperature,
-                    [Values(-103.15, -102.15, -101.15, -100.15, -99.15, -98.15, -97.15, -96.15, -95.15, -94.15, -93.15)]double expected)
+        public void ConvertKelvinToCelsiusRange_130_To_140_RoundedTo2DP([Range(130d, 140d, 1d)]double temperature,
+                    [Values(-143.15, -142.15, -141.15, -140.15, -139.15, -138.15, -137.15, -136.15, -135.15, -134.15, -133.15)]double expected)
+        {
+            double actual = _sut.Convert(temperature, _kelvinToCelsius, RoundBy);
+
+            Assert.AreEqual(expected, actual, _toleranceLevel);
+        }
+
+        [Test, Sequential]
+        public void ConvertKelvinToCelsiusRange_141_To_150_RoundedTo2DP([Range(141d, 150d, 1d)]double temperature,
+                    [Values(-132.15, -131.15, -130.15, -129.15, -128.15, -127.15, -126.15, -125.15, -124.15, -123.15)]double expected)
+        {
+            double actual = _sut.Convert(temperature, _kelvinToCelsius, RoundBy);
+
+            Assert.AreEqual(expected, actual, _toleranceLevel);
+        }
+
+        [Test, Sequential]
+        public void ConvertKelvinToCelsiusRange_151_To_160_RoundedTo2DP([Range(151d, 160d, 1d)]double temperature,
+                    [Values(-122.15, -121.15, -120.15, -119.15, -118.15, -117.15, -116.15, -115.15, -114.15, -113.15)]double expected)
+        {
+            double actual = _sut.Convert(temperature, _kelvinToCelsius, RoundBy);
+
+            Assert.AreEqual(expected, actual, _toleranceLevel);
+        }
+
+        [Test, Sequential]
+        public void ConvertKelvinToCelsiusRange_161_To_170_RoundedTo2DP([Range(161d, 170d, 1d)]double temperature,
+                    [Values(-112.15, -111.15, -110.15, -109.15, -108.15, -107.15, -106.15, -105.15, -104.15, -103.15)]double expected)
+        {
+            double actual = _sut.Convert(temperature, _kelvinToCelsius, RoundBy);
+
+            Assert.AreEqual(expected, actual, _toleranceLevel);
+        }
+
+        [Test, Sequential]
+        public void ConvertKelvinToCelsiusRange_171_To_180_RoundedTo2DP([Range(171d, 180d, 1d)]double temperature,
+                    [Values(-102.15, -101.15, -100.15, -99.15, -98.15, -97.15, -96.15, -95.15, -94.15, -93.15)]double expected)
         {
             double actual = _sut.Convert(temperature, _kelvinToCelsius, RoundBy);
 
@@ -174,7 +212,45 @@ namespace TempConverter.UnitTests.Standard.Kelvin.ToDecimalPlace_2
 
             Assert.AreEqual(expected, actual, _toleranceLevel);
         }
-        
+
+        [Test, Sequential]
+        public void ConvertKelvinToCelsiusRange_341_To_350_RoundedTo2DP([Range(341d, 350d, 1d)]double temperature,
+                    [Values(68.15, 69.15, 70.15, 71.15, 72.15, 73.15, 74.15, 75.15, 76.15, 77.15)]double expected)
+        {
+            double actual = _sut.Convert(temperature, _kelvinToCelsius, RoundBy);
+
+            Assert.AreEqual(expected, actual, _toleranceLevel);
+        }
+
+        [Test, Sequential]
+        public void ConvertKelvinToCelsiusRange_351_To_360_RoundedTo2DP([Range(351d, 360d, 1d)]double temperature,
+                    [Values(78.15, 79.15, 80.15, 81.15, 82.15, 83.15, 84.15, 85.15, 86.15, 87.15)]double expected)
+        {
+            double actual = _sut.Convert(temperature, _kelvinToCelsius, RoundBy);
+
+            Assert.AreEqual(expected, actual, _toleranceLevel);
+        }
+
+        [Test, Sequential]
+        public void ConvertKelvinToCelsiusRange_361_To_370_RoundedTo2DP([Range(361d, 370d, 1d)]double temperature,
+                    [Values(88.15, 89.15, 90.15, 91.15, 92.15, 93.15, 94.15, 95.15, 96.15, 97.15)]double expected)
+        {
+            double actual = _sut.Convert(temperature, _kelvinToCelsius, RoundBy);
+
+            Assert.AreEqual(expected, actual, _toleranceLevel);
+        }
+
+        [Test, Sequential]
+        public void ConvertKelvinToCelsiusRange_371_To_380_RoundedTo2DP([Range(371d, 380d, 1d)]double temperature,
+                    [Values(98.15, 99.15, 100.15, 101.15, 102.15, 103.15, 104.15, 105.15, 106.15, 107.15)]double expected)
+        {
+            double actual = _sut.Convert(temperature, _kelvinToCelsius, RoundBy);
+
+            Assert.AreEqual(expected, actual, _toleranceLevel);
+        }
+
+        #endregion
+
         [TearDown]
         public void TearDown()
         {

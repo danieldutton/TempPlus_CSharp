@@ -24,7 +24,7 @@ namespace TempConverter.GUI
             Application.SetCompatibleTextRenderingDefault(false);
             
             var tempConverter = new StandardConverter();
-            var noFocusTrackBar = new NoFocusTrackBar(new Scale<int>(minimum: -150, maximum: 150, scaleBy: 3));
+            var noFocusTrackBar = new NoFocusTrackBar(new Scale<int>(minimum: -220, maximum: 220, scaleBy: 5));
 
             Application.Run(new Console(tempConverter, noFocusTrackBar));
         }

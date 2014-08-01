@@ -38,18 +38,6 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Scientific\Kelvin\ToDecimalPlace_0\ScientificConverter_K_To_Rank_Should.cs" />
-    <Compile Include="Scientific\Kelvin\ToDecimalPlace_0\ScientificConverter_K_To_Reau_Should.cs" />
-    <Compile Include="Scientific\Kelvin\ToDecimalPlace_2\ScientificConverter_K_To_Rank_Should.cs" />
-    <Compile Include="Scientific\Kelvin\ToDecimalPlace_2\ScientificConverter_K_To_Reau_Should.cs" />
-    <Compile Include="Scientific\Rankine\ToDecimalPlace_0\ScientificConverter_Rank_To_K_Should.cs" />
-    <Compile Include="Scientific\Rankine\ToDecimalPlace_0\ScientificConverter_Rank_To_Reau_Should.cs" />
-    <Compile Include="Scientific\Rankine\ToDecimalPlace_2\ScientificConverter_Rank_To_K_Should.cs" />
-    <Compile Include="Scientific\Rankine\ToDecimalPlace_2\ScientificConverter_Rank_To_Reau_Should.cs" />
-    <Compile Include="Scientific\Reaumur\ToDecimalPlace_0\ScientificConverter_Reau_To_K_Should.cs" />
-    <Compile Include="Scientific\Reaumur\ToDecimalPlace_0\ScientificConverter_Reau_To_Rank_Should.cs" />
-    <Compile Include="Scientific\Reaumur\ToDecimalPlace_2\ScientificConverter_Reau_To_K_Should.cs" />
-    <Compile Include="Scientific\Reaumur\ToDecimalPlace_2\ScientificConverter_Reau_To_Rank_Should.cs" />
     <Compile Include="Standard\Celsius\ToDecimalPlace_0\StandardConverter_C_To_F_Should.cs" />
     <Compile Include="Standard\Celsius\ToDecimalPlace_0\StandardConverter_C_To_K_Should.cs" />
     <Compile Include="Standard\Celsius\ToDecimalPlace_2\StandardConverter_C_To_F_Should.cs" />

@@ -20,7 +20,7 @@ namespace TempConverter.UnitTests.Standard.Fahrenheit.ToDecimalPlace_0
             _sut = new StandardConverter();
         }
 
-        #region Fahrenheit To Kelvin Positive Values
+        #region Positive Values
 
         [Test, Sequential]
         public void ConvertFahrenheitToKelvinRange_0_To_10_RoundedTo0DP([Range(0, 10, 1)]double temperature,
@@ -157,13 +157,139 @@ namespace TempConverter.UnitTests.Standard.Fahrenheit.ToDecimalPlace_0
             Assert.AreEqual(expected, actual);
         }
 
-        #endregion
+        [Test, Sequential]
+        public void ConvertFahrenheitToKelvinRange_151_To_160_RoundedTo0DP([Range(151d, 160d, 1d)]double temperature,
+                    [Values(339, 340, 340, 341, 341, 342, 343, 343, 344, 344)]double expected)
+        {
+            double actual = _sut.Convert(temperature, _fahrenheitToKelvin, RoundBy);
 
-        #region Fahrenheit To Kelvin Negative Values
+            Assert.AreEqual(expected, actual);
+        }
 
         [Test, Sequential]
-        public void ConvertFahrenheitToKelvinRange_Neg150_To_Neg140_RoundedTo0DP([Range(-150, -140, 1)]double temperature,
-                    [Values(172, 173, 173, 174, 174, 175, 175, 176, 176, 177, 178)]double expected)
+        public void ConvertFahrenheitToKelvinRange_161_To_170_RoundedTo0DP([Range(161d, 170d, 1d)]double temperature,
+                    [Values(345, 345, 346, 346, 347, 348, 348, 349, 349, 350)]double expected)
+        {
+            double actual = _sut.Convert(temperature, _fahrenheitToKelvin, RoundBy);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test, Sequential]
+        public void ConvertFahrenheitToKelvinRange_171_To_180_RoundedTo0DP([Range(171d, 180d, 1d)]double temperature,
+                    [Values(350, 351, 351, 352, 353, 353, 354, 354, 355, 355)]double expected)
+        {
+            double actual = _sut.Convert(temperature, _fahrenheitToKelvin, RoundBy);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test, Sequential]
+        public void ConvertFahrenheitToKelvinRange_181_To_190_RoundedTo0DP([Range(181d, 190d, 1d)]double temperature,
+                    [Values(356, 356, 357, 358, 358, 359, 359, 360, 360, 361)]double expected)
+        {
+            double actual = _sut.Convert(temperature, _fahrenheitToKelvin, RoundBy);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test, Sequential]
+        public void ConvertFahrenheitToKelvinRange_191_To_200_RoundedTo0DP([Range(191d, 200d, 1d)]double temperature,
+                    [Values(361, 362, 363, 363, 364, 364, 365, 365, 366, 366)]double expected)
+        {
+            double actual = _sut.Convert(temperature, _fahrenheitToKelvin, RoundBy);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test, Sequential]
+        public void ConvertFahrenheitToKelvinRange_201_To_210_RoundedTo0DP([Range(201d, 210d, 1d)]double temperature,
+                    [Values(367, 368, 368, 369, 369, 370, 370, 371, 371, 372)]double expected)
+        {
+            double actual = _sut.Convert(temperature, _fahrenheitToKelvin, RoundBy);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test, Sequential]
+        public void ConvertFahrenheitToKelvinRange_211_To_220_RoundedTo0DP([Range(211d, 220d, 1d)]double temperature,
+                    [Values(373, 373, 374, 374, 375, 375, 376, 376, 377, 378)]double expected)
+        {
+            double actual = _sut.Convert(temperature, _fahrenheitToKelvin, RoundBy);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        #endregion
+
+        #region Negative Values
+
+        [Test, Sequential]
+        public void ConvertFahrenheitToKelvinRange_Neg220_To_Neg210_RoundedTo0DP([Range(-220d, -210d, 1d)]double temperature,
+                    [Values(133, 134, 134, 135, 135, 136, 136, 137, 138, 138, 139)]double expected)
+        {
+            double actual = _sut.Convert(temperature, _fahrenheitToKelvin, RoundBy);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test, Sequential]
+        public void ConvertFahrenheitToKelvinRange_Neg209_To_Neg200_RoundedTo0DP([Range(-209d, -200d, 1d)]double temperature,
+                    [Values(139, 140, 140, 141, 141, 142, 143, 143, 144, 144)]double expected)
+        {
+            double actual = _sut.Convert(temperature, _fahrenheitToKelvin, RoundBy);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test, Sequential]
+        public void ConvertFahrenheitToKelvinRange_Neg199_To_Neg190_RoundedTo0DP([Range(-199d, -190d, 1d)]double temperature,
+                    [Values(145, 145, 146, 146, 147, 148, 148, 149, 149, 150)]double expected)
+        {
+            double actual = _sut.Convert(temperature, _fahrenheitToKelvin, RoundBy);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test, Sequential]
+        public void ConvertFahrenheitToKelvinRange_Neg189_To_Neg180_RoundedTo0DP([Range(-189d, -180d, 1d)]double temperature,
+                    [Values(150, 151, 151, 152, 153, 153, 154, 154, 155, 155)]double expected)
+        {
+            double actual = _sut.Convert(temperature, _fahrenheitToKelvin, RoundBy);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test, Sequential]
+        public void ConvertFahrenheitToKelvinRange_Neg179_To_Neg170_RoundedTo0DP([Range(-179d, -170d, 1d)]double temperature,
+                    [Values(156, 156, 157, 158, 158, 159, 159, 160, 160, 161)]double expected)
+        {
+            double actual = _sut.Convert(temperature, _fahrenheitToKelvin, RoundBy);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test, Sequential]
+        public void ConvertFahrenheitToKelvinRange_Neg169_To_Neg160_RoundedTo0DP([Range(-169d, -160d, 1d)]double temperature,
+                    [Values(161, 162, 163, 163, 164, 164, 165, 165, 166, 166)]double expected)
+        {
+            double actual = _sut.Convert(temperature, _fahrenheitToKelvin, RoundBy);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test, Sequential]
+        public void ConvertFahrenheitToKelvinRange_Neg159_To_Neg150_RoundedTo0DP([Range(-159d, -150d, 1d)] double temperature,
+            [Values(167, 168, 168, 169, 169, 170, 170, 171, 171, 172)] double expected)
+        {
+            double actual = _sut.Convert(temperature, _fahrenheitToKelvin, RoundBy);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test, Sequential]
+        public void ConvertFahrenheitToKelvinRange_Neg149_To_Neg140_RoundedTo0DP([Range(-149, -140, 1)]double temperature,
+                    [Values(173, 173, 174, 174, 175, 175, 176, 176, 177, 178)]double expected)
         {
             double actual = _sut.Convert(temperature, _fahrenheitToKelvin, RoundBy);
 

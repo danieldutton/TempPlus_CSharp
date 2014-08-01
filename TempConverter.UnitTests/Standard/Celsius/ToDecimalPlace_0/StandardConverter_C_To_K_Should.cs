@@ -20,7 +20,7 @@ namespace TempConverter.UnitTests.Standard.Celsius.ToDecimalPlace_0
             _sut = new StandardConverter();
         }
 
-        #region Celsius To Kelvin Positive Values
+        #region Positive Values
 
         [Test, Sequential]
         public void ConvertCelsiusToKelvinRange_0_To_10_RoundedTo0DP([Range(0d, 10d, 1d)]double temperature,
@@ -86,13 +86,86 @@ namespace TempConverter.UnitTests.Standard.Celsius.ToDecimalPlace_0
             Assert.AreEqual(expected, actual);
         }
         
-        #endregion
+        [Test, Sequential]
+        public void ConvertCelsiusToKelvinRange_71_To_80_RoundedTo0DP([Range(71d, 80d, 1d)]double temperature,
+                    [Values(344, 345, 346, 347, 348, 349, 350, 351, 352, 353)]double expected)
+        {
+            double actual = _sut.Convert(temperature, _celsiusToKelvin, RoundBy);
 
-        #region Celsius To Kelvin Negative Values
+            Assert.AreEqual(expected, actual);
+        }
 
         [Test, Sequential]
-        public void ConvertCelsiusToKelvinRange_Neg100_To_Neg90_RoundedTo0DP([Range(-100d, -90d, 1d)]double temperature,
-                    [Values(173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183)]double expected)
+        public void ConvertCelsiusToKelvinRange_81_To_90_RoundedTo0DP([Range(81d, 90d, 1d)]double temperature,
+                    [Values(354, 355, 356, 357, 358, 359, 360, 361, 362, 363)]double expected)
+        {
+            double actual = _sut.Convert(temperature, _celsiusToKelvin, RoundBy);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test, Sequential]
+        public void ConvertCelsiusToKelvinRange_91_To_100_RoundedTo0DP([Range(91d, 100d, 1d)]double temperature,
+                    [Values(364, 365, 366, 367, 368, 369, 370, 371, 372, 373)]double expected)
+        {
+            double actual = _sut.Convert(temperature, _celsiusToKelvin, RoundBy);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test, Sequential]
+        public void ConvertCelsiusToKelvinRange_101_To_110_RoundedTo0DP([Range(101d, 110d, 1d)]double temperature,
+                    [Values(374, 375, 376, 377, 378, 379, 380, 381, 382, 383)]double expected)
+        {
+            double actual = _sut.Convert(temperature, _celsiusToKelvin, RoundBy);
+
+            Assert.AreEqual(expected, actual);
+        }
+        
+        #endregion
+
+        #region Negative Values
+
+
+        [Test, Sequential]
+        public void ConvertCelsiusToKelvinRange_Neg140_To_Neg130_RoundedTo0DP([Range(-140d, -130d, 1d)]double temperature,
+                    [Values(133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143)]double expected)
+        {
+            double actual = _sut.Convert(temperature, _celsiusToKelvin, RoundBy);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test, Sequential]
+        public void ConvertCelsiusToKelvinRange_Neg129_To_Neg120_RoundedTo0DP([Range(-129d, -120d, 1d)]double temperature,
+                    [Values(144, 145, 146, 147, 148, 149, 150, 151, 152, 153)]double expected)
+        {
+            double actual = _sut.Convert(temperature, _celsiusToKelvin, RoundBy);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test, Sequential]
+        public void ConvertCelsiusToKelvinRange_Neg119_To_Neg110_RoundedTo0DP([Range(-119d, -110d, 1d)]double temperature,
+                    [Values(154, 155, 156, 157, 158, 159, 160, 161, 162, 163)]double expected)
+        {
+            double actual = _sut.Convert(temperature, _celsiusToKelvin, RoundBy);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test, Sequential]
+        public void ConvertCelsiusToKelvinRange_Neg109_To_Neg100_RoundedTo0DP([Range(-109d, -100d, 1d)]double temperature,
+                    [Values(164, 165, 166, 167, 168, 169, 170, 171, 172, 173)]double expected)
+        {
+            double actual = _sut.Convert(temperature, _celsiusToKelvin, RoundBy);
+
+            Assert.AreEqual(expected, actual);
+        }
+        
+        [Test, Sequential]
+        public void ConvertCelsiusToKelvinRange_Neg99_To_Neg90_RoundedTo0DP([Range(-99d, -90d, 1d)]double temperature,
+                    [Values(174, 175, 176, 177, 178, 179, 180, 181, 182, 183)]double expected)
         {
             double actual = _sut.Convert(temperature, _celsiusToKelvin, RoundBy);
 

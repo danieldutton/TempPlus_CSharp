@@ -1,23 +1,6 @@
-﻿Tests assume the following:-
+﻿Testing Scales are 
 
-STANDARD
---------
-
-App to be used for earth temperature, not scientific temperatures
-
-Hottest Temperature ever recorded on earth in Fahrenheit = 136.4F - Death Valley Greenland Ranch, Death Valley, California
-Coldest Temperature ever recorded on earth in Fahrenheit = -128.6F - Soviet Vostok Station, Antarctica
-
-Therefore, giving leeway the scale of -150F to 150F is adopted.  
-Tests check for accuracy between the following ranges
-
-Testing Scales are therefore
-
-Fahrenheit - minus 150 to plus 150
-Celsius -    minus 100 to plus 70
-Kelvin -     plus  170 to plus 340
-
-
-SCIENTIFIC
-----------
+Fahrenheit - minus 220 to plus 220
+Celsius -    minus 140 to plus 110
+Kelvin -     plus  130 to plus 380
 

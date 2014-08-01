@@ -39,7 +39,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Domain\Scale.cs" />
     <Compile Include="Domain\Temperature.cs" />
-    <Compile Include="ScientificConverter.cs" />
     <Compile Include="StandardConverter.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

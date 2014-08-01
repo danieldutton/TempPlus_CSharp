@@ -21,7 +21,7 @@ namespace TempConverter.UnitTests.Standard.Celsius.ToDecimalPlace_0
             _sut = new StandardConverter();
         }
 
-        #region Celsius To Fahrenheit Positive Values
+        #region Positive Values
 
         [Test, Sequential]
         public void ConvertCelsiusToFahrenheitRange_0_To_10_RoundedTo0DP([Range(0d, 10d, 1d)]double temperature,
@@ -85,14 +85,86 @@ namespace TempConverter.UnitTests.Standard.Celsius.ToDecimalPlace_0
 
             Assert.AreEqual(expected, actual);
         }
+
+        [Test, Sequential]
+        public void ConvertCelsiusToFahrenheitRange_71_To_80_RoundedTo0DP([Range(71d, 80d, 1d)]double temperature,
+                    [Values(160, 162, 163, 165, 167, 169, 171, 172, 174, 176)]double expected)
+        {
+            double actual = _sut.Convert(temperature, _celsiusToFahrenheit, RoundBy);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test, Sequential]
+        public void ConvertCelsiusToFahrenheitRange_81_To_90_RoundedTo0DP([Range(81d, 90d, 1d)]double temperature,
+                    [Values(178, 180, 181, 183, 185, 187, 189, 190, 192, 194)]double expected)
+        {
+            double actual = _sut.Convert(temperature, _celsiusToFahrenheit, RoundBy);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test, Sequential]
+        public void ConvertCelsiusToFahrenheitRange_91_To_100_RoundedTo0DP([Range(91d, 100d, 1d)]double temperature,
+                    [Values(196, 198, 199, 201, 203, 205, 207, 208, 210, 212)]double expected)
+        {
+            double actual = _sut.Convert(temperature, _celsiusToFahrenheit, RoundBy);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test, Sequential]
+        public void ConvertCelsiusToFahrenheitRange_101_To_110_RoundedTo0DP([Range(101d, 110d, 1d)]double temperature,
+                    [Values(214, 216, 217, 219, 221, 223, 225, 226, 228, 230)]double expected)
+        {
+            double actual = _sut.Convert(temperature, _celsiusToFahrenheit, RoundBy);
+
+            Assert.AreEqual(expected, actual);
+        }
         
         #endregion
 
-        #region Celsius To Fahrenheit Negative Values
+        #region Negative Values
 
         [Test, Sequential]
-        public void ConvertCelsiusToFahrenheitRange_Neg100_To_Neg90_RoundedTo0DP([Range(-100d, -90d, 1d)]double temperature,
-                    [Values(-148, -146, -144, -143, -141, -139, -137, -135, -134, -132, -130)]double expected)
+        public void ConvertCelsiusToFahrenheitRange_Neg140_To_Neg130_RoundedTo2DP([Range(-140d, -130d, 1d)]double temperature,
+                    [Values(-220, -218, -216, -215, -213, -211, -209, -207, -206, -204, -202)]double expected)
+        {
+            double actual = _sut.Convert(temperature, _celsiusToFahrenheit, RoundBy);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test, Sequential]
+        public void ConvertCelsiusToFahrenheitRange_Neg129_To_Neg120_RoundedTo2DP([Range(-129d, -120d, 1d)]double temperature,
+                    [Values(-200, -198, -197, -195, -193, -191, -189, -188, -186, -184)]double expected)
+        {
+            double actual = _sut.Convert(temperature, _celsiusToFahrenheit, RoundBy);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test, Sequential]
+        public void ConvertCelsiusToFahrenheitRange_Neg119_To_Neg110_RoundedTo2DP([Range(-119d, -110d, 1d)]double temperature,
+                    [Values(-182, -180, -179, -177, -175, -173, -171, -170, -168, -166)]double expected)
+        {
+            double actual = _sut.Convert(temperature, _celsiusToFahrenheit, RoundBy);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test, Sequential]
+        public void ConvertCelsiusToFahrenheitRange_Neg109_To_Neg100_RoundedTo2DP([Range(-109d, -100d, 1d)]double temperature,
+                    [Values(-164, -162, -161, -159, -157, -155, -153, -152, -150, -148)]double expected)
+        {
+            double actual = _sut.Convert(temperature, _celsiusToFahrenheit, RoundBy);
+
+            Assert.AreEqual(expected, actual);
+        }
+        //
+        [Test, Sequential]
+        public void ConvertCelsiusToFahrenheitRange_Neg99_To_Neg90_RoundedTo0DP([Range(-99d, -90d, 1d)]double temperature,
+                    [Values(-146, -144, -143, -141, -139, -137, -135, -134, -132, -130)]double expected)
         {
             double actual = _sut.Convert(temperature, _celsiusToFahrenheit, RoundBy);
 
